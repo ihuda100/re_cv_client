@@ -6,7 +6,7 @@ import { API_URL, doApiMethod } from '../services/apiService';
 const Varification = () => {
   let nav = useNavigate();
   const myEmail = useSelector(state => state.myDetailsSlice.email);
-  const [code, setCode] = useState(['', '', '', '']);
+  const [code, setCode] = useState(['', '', '', '','']);
 
   const handleChange = (event, index) => {
     const value = event.target.value;
@@ -16,7 +16,7 @@ const Varification = () => {
       newCode[index] = value;
       setCode(newCode);
       // מעבר אוטומטי לשדה הבא אם יש קלט
-      if (value && index < 3) {
+      if (value && index < 4) {
         document.getElementById(`input-${index + 1}`).focus();
       }
     }
