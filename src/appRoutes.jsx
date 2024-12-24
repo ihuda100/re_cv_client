@@ -15,6 +15,9 @@ import Submit from './componentsClient/submit';
 import Help from './componentsClient/help';
 import VarificationforgotPass from './componentsClient/varificationforgotPass'
 import LogoutClient from './componentsClient/logoutClient';
+import Form from './componentsClient/Form';
+import Upload from './componentsClient/Upload';
+
 
 function AppRoutes() {
   return (
@@ -31,7 +34,9 @@ function AppRoutes() {
           <Route path="/logout" element={<LogoutClient />} />
           <Route path="/signup" element={<SignUpClient />} />
           <Route path="/varification" element={<Varification/>}/>
-          <Route path="/homeClient" element={<HomeClient />} /> 
+          <Route path="/homeClient" element={<HomeClient />} />
+          <Route path="/form" element={<Form/>}/>
+          <Route path="/upload" element={<Upload/>} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/forgotPassClient" element={<ForgotPass />} />
           <Route path="/help" element={<Help/>} />

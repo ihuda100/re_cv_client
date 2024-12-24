@@ -7,7 +7,7 @@ import { addIfShowNav, addIsAdmin, addName } from '../featuers/myDetailsSlice';
 const HomeClient = () => {
     const myName = useSelector(state => state.myDetailsSlice.name);
     const IsAdmin = useSelector(state => state.myDetailsSlice.isAdmin);
-    const navigate = useNavigate();
+    const nav = useNavigate();
     const [myInfo, setmyInfo] = useState({});
     const dispatch = useDispatch();
 
@@ -32,9 +32,21 @@ const HomeClient = () => {
         }
     }
 
+    const toUpload = () => {
+        nav("/upload");
+    }
+
+    const toForm = () => {
+        nav("/form");
+    }
+
     return (
         <div className="container text-center" style={{ height: '100vh', padding: '20px', }}>
-            <h1 className='mb-2'>Welcome {myName}{myInfo.FirstName}</h1>
+            <h1 className='mb-2'>Welcome {myName} {myInfo.LastName}</h1>
+            <div className='w-50 d-flex justify-content-around m-auto mt-5'>
+                <button onClick={toUpload} className='btn btn-success'>I have CV to upgrate</button>
+                <button onClick={toForm} className='btn btn-success'>I want to do new CV</button>
+            </div>
         </div>
     );
 };
