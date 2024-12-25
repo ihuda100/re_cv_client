@@ -13,7 +13,7 @@ const Form = () => {
         }}
       >
         <div>
-          <h1>Re:cv</h1>
+          <h1>Re:CV</h1>
         </div>
 
         <form
