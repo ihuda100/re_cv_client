@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const VerifyData = () => {
+const VerifyFinal = () => {
   const location = useLocation();
-  const { fileInfo } = location.state || {};
-  const [information, setInformation] = useState(fileInfo.personal_information);
+  const { data } = location.state || {};
+  const [info, setInfo] = useState(data);
 
   const sendToPDF = () => {
     console.log(information);
-  }
+  };
   const handleChange = (e) => {
-    const { name, value} = e.target;
-    setInformation({
-        ...information,
-        [name]: value,   
-    })
+    const { name, value } = e.target;
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    console.log(value);
+    console.log(info);
   };
   return (
     <div
@@ -27,7 +29,7 @@ const VerifyData = () => {
       }}
     >
       <div>
-        <h1>Details from your CV</h1>
+        <h1>Details from your information</h1>
       </div>
 
       <form
@@ -42,37 +44,39 @@ const VerifyData = () => {
         <label htmlFor=""> Full Name:</label>
         <input
           type="text"
-          name="full_name"
-          value={information.full_name}
+          name="fullName"
+          value={info.fullName}
           onChange={handleChange}
         />
         <label htmlFor="">ID number:</label>
         <input
           type="number"
-          name="identity"
-          value={information.identity}
+          name="id"
+          value={info.id}
           onChange={handleChange}
         />
         <label htmlFor="">Phone:</label>
         <input
           type="number"
-          name="mobile"
-          value={information.mobile}
+          name="phone"
+          value={info.phone}
           onChange={handleChange}
         />
         <label htmlFor="">Email:</label>
         <input
           type="email"
           name="email"
-          value={information.email}
+          value={info.email}
           onChange={handleChange}
         />
       </form>
       <div style={{ padding: "20px" }}>
-        <button onClick={sendToPDF} className="btn btn-success">Verify your data</button>
+        <button onClick={sendToPDF} className="btn btn-success">
+          Verify your data
+        </button>
       </div>
     </div>
   );
 };
 
-export default VerifyData;
+export default VerifyFinal;

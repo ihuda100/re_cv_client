@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  const nav = useNavigate();
+  let data = {
+    fullName: "",
+    id: "",
+    phone: "",
+    email: "",
+  };
+
+  const formData = async () => {
+    data.fullName = document.querySelector("#fullName").value;
+    data.id = document.querySelector("#IDnum").value;
+    data.phone = document.querySelector("#PhoneNumber").value;
+    data.email = document.querySelector("#email").value;
+     nav("/verifyfinal", { state: { data: data } });
+  };
+
   return (
     <>
       <div
@@ -25,19 +42,17 @@ const Form = () => {
             gap: "10px",
           }}
         >
-          <label htmlFor="">First Name:</label>
-          <input type="text" />
-          <label htmlFor=""> Last Name:</label>
-          <input type="text" />
+          <label htmlFor="">Full Name:</label>
+          <input type="text" id="fullName" required />
           <label htmlFor="">ID number:</label>
-          <input type="number" />
+          <input type="number" id="IDnum" />
           <label htmlFor="">Phone:</label>
-          <input type="number" />
+          <input type="number" id="PhoneNumber" required />
           <label htmlFor="">Email:</label>
-          <input type="email" required />
+          <input type="email" id="email" required />
         </form>
         <div style={{ padding: "20px" }}>
-          <button>Submit</button>
+          <button onClick={formData}>Submit</button>
         </div>
         <div>
           <h2>Fill you details</h2>
