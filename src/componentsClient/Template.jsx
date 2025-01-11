@@ -4,6 +4,12 @@ import cv2 from "./assets/cv2.jpg";
 import cv3 from "./assets/cv3.jpg";
 import CV from "./CV";
 
+/*
+קומפווננט שהוא מציג דוגמאות לעיצובים , משתמש בקומפוננט שנקרא : 
+CV.jsx
+
+*/
+
 const Template = () => {
   let imgs = [cv1, cv2, cv3];
 
