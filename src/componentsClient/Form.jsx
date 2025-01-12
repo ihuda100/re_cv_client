@@ -1,28 +1,38 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { doApiMethod, API_URL } from "../services/apiService";
 
 const Form = () => {
   const nav = useNavigate();
-  let data = {
-    fullName: "",
-    id: "",
-    phone: "",
-    email: "",
-  };
 
-  const formData = async () => {
-    data.fullName = document.querySelector("#fullName").value;
-    data.id = document.querySelector("#IDnum").value;
-    data.phone = document.querySelector("#PhoneNumber").value;
-    data.email = document.querySelector("#email").value;
-     nav("/verifyfinal", { state: { data: data } });
+  const sendDataForUpgrade = async () => {
+    let data = {
+      fullName: document.querySelector("#fullName").value,
+      phone: document.querySelector("#phone").value,
+      email: document.querySelector("#email").value,
+      linkdin: document.querySelector("#linkdin").value,
+      gitHub: document.querySelector("#gitHub").value,
+      body: {
+        education: document.querySelector("#education").value,
+        workExpirience: document.querySelector("#workExpirience").value,
+        freeWords: document.querySelector("#body").value,
+      },
+    };
+
+    let url = API_URL + '/resumes/upgrade'
+    try{
+      const newDate = await doApiMethod(url, 'POST', data);
+      // console.log(newData.data);
+    }catch (err){
+      console.log(err);
+    }
+    nav("/verifyfinal", { state: { data } });
   };
 
   return (
     <>
       <div
         style={{
-          height: "600px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -30,7 +40,7 @@ const Form = () => {
         }}
       >
         <div>
-          <h1>Re:CV</h1>
+          <h1>Please tell me about us</h1>
         </div>
 
         <form
@@ -40,22 +50,31 @@ const Form = () => {
             flexDirection: "column",
             textAlign: "center",
             gap: "10px",
+            width: "50%",
           }}
         >
           <label htmlFor="">Full Name:</label>
           <input type="text" id="fullName" required />
-          <label htmlFor="">ID number:</label>
-          <input type="number" id="IDnum" />
           <label htmlFor="">Phone:</label>
-          <input type="number" id="PhoneNumber" required />
+          <input type="text" id="phone" required />
           <label htmlFor="">Email:</label>
           <input type="email" id="email" required />
+          <label htmlFor="">Linkdin:</label>
+          <input type="text" id="linkdin" />
+          <label htmlFor="">GitHub:</label>
+          <input type="text" id="gitHub" />
+          <label htmlFor="">Education:</label>
+          <textarea type="text" id="education" required />
+          <label htmlFor="">Work expirience:</label>
+          <textarea type="text" id="workExpirience" required />
+          <label htmlFor="">Tell me about you</label>
+          <textarea type="text" id="body" />
         </form>
         <div style={{ padding: "20px" }}>
-          <button onClick={formData}>Submit</button>
+          <button className="btn btn-success" onClick={sendDataForUpgrade}>Submit</button>
         </div>
         <div>
-          <h2>Fill you details</h2>
+          <h2>...</h2>
         </div>
       </div>
     </>

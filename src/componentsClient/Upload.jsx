@@ -15,7 +15,7 @@ const Upload = () => {
   };
   const sendFile = async () => {
     setLoading(true);
-    console.log(file);
+    // console.log(file);
     if (!file) {
       alert("select file please!");
       setLoading(false);
@@ -32,7 +32,7 @@ const Upload = () => {
         },
       });
       console.log("הקובץ הועלה בהצלחה:", response.data);
-      nav('/verifydata',{ state: { fileInfo: response.data } })
+      nav('/verifyfinal',{ state: { data: response.data } })
     } catch (error) {
       console.error("שגיאה בהעלאת הקובץ:", error);
     }
@@ -40,6 +40,7 @@ const Upload = () => {
 
   return (
     <div className="mt-5 text-center">
+      <h1 className="mb-3">Upload your CV file<h5>(PDF file)</h5></h1>
       <input
         onChange={handleFileChange}
         className="border rounded-1"

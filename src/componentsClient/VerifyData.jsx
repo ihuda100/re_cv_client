@@ -4,17 +4,17 @@ import { useLocation } from "react-router-dom";
 const VerifyData = () => {
   const location = useLocation();
   const { fileInfo } = location.state || {};
-  const [information, setInformation] = useState(fileInfo.personal_information);
-
+  const [information, setInformation] = useState(fileInfo?.personal_information);
+  console.log(fileInfo);
   const sendToPDF = () => {
     console.log(information);
-  }
+  };
   const handleChange = (e) => {
-    const { name, value} = e.target;
+    const { name, value } = e.target;
     setInformation({
-        ...information,
-        [name]: value,   
-    })
+      ...information,
+      [name]: value,
+    });
   };
   return (
     <div
@@ -37,27 +37,21 @@ const VerifyData = () => {
           flexDirection: "column",
           textAlign: "center",
           gap: "10px",
+          width: "50%",
         }}
       >
         <label htmlFor=""> Full Name:</label>
         <input
           type="text"
-          name="full_name"
-          value={information.full_name}
-          onChange={handleChange}
-        />
-        <label htmlFor="">ID number:</label>
-        <input
-          type="number"
-          name="identity"
-          value={information.identity}
+          name="fullName"
+          value={information?.fullName}
           onChange={handleChange}
         />
         <label htmlFor="">Phone:</label>
         <input
           type="number"
-          name="mobile"
-          value={information.mobile}
+          name="phone"
+          value={information?.phone}
           onChange={handleChange}
         />
         <label htmlFor="">Email:</label>
@@ -67,9 +61,34 @@ const VerifyData = () => {
           value={information.email}
           onChange={handleChange}
         />
+        <label htmlFor="">Linkdin:</label>
+        <input
+          type="text"
+          name="linkdin"
+          value={information.linkdin}
+          onChange={handleChange}
+        />
+        <label htmlFor="">GitHub:</label>
+        <input
+          type="text"
+          name="gitHub"
+          value={information.gitHub}
+          onChange={handleChange}
+        />
+        <label htmlFor="">Body:</label>
+        <input
+        style={{ overflowY: "auto"}}
+        
+          type="text"
+          name="body"
+          value={information.identity}
+          onChange={handleChange}
+        />
       </form>
       <div style={{ padding: "20px" }}>
-        <button onClick={sendToPDF} className="btn btn-success">Verify your data</button>
+        <button onClick={sendToPDF} className="btn btn-success">
+          Verify your data
+        </button>
       </div>
     </div>
   );
