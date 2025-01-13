@@ -1,0 +1,25 @@
+.shade {
+  border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border: 25px groove #1700c7;
+}
+
+.borderDef {
+  border: 5px solid black;
+}
+
+.borderHighLight {
+  border: 5px solid aqua;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

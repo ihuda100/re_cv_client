@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import "./index.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CVtemp1 from "./CVtemp1";
 
-const CV = ({ width, height, src }) => {
+const CV = ({ width, height, src, cvlink }) => {
   const [highLight, SetHighLight] = useState(false);
 
   const handleHover = function () {
     highLight ? SetHighLight(false) : SetHighLight(true);
   };
+
+  let nav = useNavigate();
 
   return (
     <div
