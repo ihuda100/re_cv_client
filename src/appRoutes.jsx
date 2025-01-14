@@ -18,6 +18,8 @@ import LogoutClient from './componentsClient/logoutClient';
 import Form from './componentsClient/Form';
 import Upload from './componentsClient/Upload';
 import VerifyFinal from './componentsClient/VerifyFinal';
+// import Template from './componentsClient/Template';
+
 
 
 function AppRoutes() {
@@ -39,6 +41,7 @@ function AppRoutes() {
           <Route path="/form" element={<Form/>}/>
           <Route path="/upload" element={<Upload/>} />
           <Route path='/verifyfinal' element={<VerifyFinal/>} />
+          {/* <Route path='/template' element={<Template/>} /> */}
           <Route path="/submit" element={<Submit />} />
           <Route path="/forgotPassClient" element={<ForgotPass />} />
           <Route path="/help" element={<Help/>} />
