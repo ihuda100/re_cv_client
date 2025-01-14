@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { doApiMethod, API_URL } from "../services/apiService";
+import axios from "axios";
 
 const VerifyFinal = () => {
+  const nav = useNavigate();
   const location = useLocation();
   const { data } = location.state || {};
   const [info, setInfo] = useState(data);
 
-  const sendToPDF = () => {
-    console.log(info);
+  const sendToPDF = async () => {
+    const url = API_URL + '/resumes/update'
+    const res = await doApiMethod(url, 'POST', info);
+    console.log(res.data)
+     nav("/template", {state: {data: info._id}})
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,7 +87,7 @@ const VerifyFinal = () => {
           rows={5}
           type="text"
           name="body"
-          value={info?.body?.education}
+          value={info?.body}
           onChange={handleChange}
         />
       </form>
