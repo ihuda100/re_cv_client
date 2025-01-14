@@ -22,6 +22,7 @@ import Template from "./componentsClient/Template";
 import CVTEST from "./componentsClient/CVTEST";
 import CVtemp1 from "./componentsClient/CVtemp1";
 
+
 function AppRoutes() {
   return (
     <BrowserRouter>

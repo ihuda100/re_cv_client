@@ -40,7 +40,7 @@ const Upload = () => {
 
   return (
     <div className="mt-5 text-center">
-      <h1 className="mb-3">Upload your CV file<h5>(PDF file)</h5></h1>
+      <h1 className="mb-3">Upload your CV file</h1>
       <input
         onChange={handleFileChange}
         className="border rounded-1"
