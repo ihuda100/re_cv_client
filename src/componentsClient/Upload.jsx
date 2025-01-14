@@ -28,6 +28,7 @@ const Upload = () => {
       let url = API_URL + "/resumes/convert"
       const response = await axios.post(url, formData, {
         headers: {
+          'x-api-key': localStorage["start_react_token"],
           "Content-Type": "multipart/form-data",
         },
       });

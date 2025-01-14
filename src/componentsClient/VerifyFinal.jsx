@@ -10,9 +10,9 @@ const VerifyFinal = () => {
   const [info, setInfo] = useState(data);
 
   const sendToPDF = async () => {
-    const url = API_URL + '/resumes/update'
-    const res = await doApiMethod(url, 'POST', info);
-    console.log(res.data)
+    // const url = API_URL + '/resumes/update'
+    // const res = await doApiMethod(url, 'POST', info);
+    // console.log(res.data)
      nav("/template", {state: {data: info._id}})
   };
   const handleChange = (e) => {

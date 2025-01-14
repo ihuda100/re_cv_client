@@ -19,8 +19,8 @@ import Form from "./componentsClient/Form";
 import Upload from "./componentsClient/Upload";
 import VerifyFinal from "./componentsClient/VerifyFinal";
 import Template from "./componentsClient/Template";
-import CVTEST from "./componentsClient/CVTEST";
 import CVtemp1 from "./componentsClient/CVtemp1";
+
 
 
 function AppRoutes() {
@@ -41,7 +41,7 @@ function AppRoutes() {
           <Route path="/homeClient" element={<HomeClient />} />
           <Route path="/form" element={<Form />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/verifyfinal" element={<VerifyFinal />} />
+          <Route path="/verify" element={<VerifyFinal />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/forgotPassClient" element={<ForgotPass />} />
           <Route path="/help" element={<Help />} />
@@ -50,9 +50,8 @@ function AppRoutes() {
             path="/VarificationforgotPass"
             element={<VarificationforgotPass />}
           />
-          <Route path="/Template" element={<Template />} />
-          <Route path="/CVTEST" element={<CVTEST />} />
-          <Route path="./CVtemp1" element={<CVtemp1 />} />
+          <Route path="/template" element={<Template />} />
+          <Route path="/cvtemp1" element={<CVtemp1/>} />
         </Route>
       </Routes>
     </BrowserRouter>
