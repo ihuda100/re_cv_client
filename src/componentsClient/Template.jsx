@@ -17,7 +17,7 @@ const Template = () => {
   const nav = useNavigate();
   const location = useLocation();
   const { data } = location.state || {};
-  // console.log(data);
+  console.log(data);
 
   let imgs = [cv1, cv2, cv3];
 

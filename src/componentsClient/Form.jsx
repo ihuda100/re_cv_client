@@ -18,15 +18,14 @@ const Form = () => {
         freeWords: document.querySelector("#body").value,
       },
     };
-
     let url = API_URL + '/resumes/upgrade'
     try{
-      const newDate = await doApiMethod(url, 'POST', data);
-      // console.log(newData.data);
+      const res = await doApiMethod(url, 'POST', data);
+      console.log('!הטופס נשלח בהצלחה',res.data);
+      nav("/verify", { state: { data: res.data }});
     }catch (err){
       console.log(err);
     }
-    nav("/verifyfinal", { state: { data } });
   };
 
   return (
