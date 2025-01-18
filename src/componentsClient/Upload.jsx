@@ -33,7 +33,7 @@ const Upload = () => {
         },
       });
       console.log("הקובץ הועלה בהצלחה:", response.data);
-      nav('/verifyfinal',{ state: { data: response.data } })
+      nav('/verify',{ state: { data: response.data } })
     } catch (error) {
       console.error("שגיאה בהעלאת הקובץ:", error);
     }
