@@ -25,17 +25,18 @@ const Template = () => {
     nav(`/cvtemp${i}`);
   };
 
-  const imageGen = () => 
+  const imageGen = () =>
     imgs.map((el, i) => (
       <CV
         height={"300px"}
         width={"300px"}
         src={el}
-        onClick={e => {openImg(i)}}
+        onClick={(e) => {
+          openImg(i + 1);
+        }}
         key={i + 1}
       />
     ));
-  
 
   return (
     <>
