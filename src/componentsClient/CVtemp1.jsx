@@ -1,7 +1,13 @@
 import React from "react";
 import "./cv.css";
+import { useLocation } from "react-router-dom";
+
 
 const Form1 = () => {
+  const location = useLocation();
+  let { data } = location.state || {};
+  console.log(data);
+  
   return (
     <>
       <div className="container">
