@@ -5,7 +5,6 @@ import cv2 from "../assets/cvImages/cv2.jpg";
 import cv3 from "../assets/cvImages/cv3.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import CV from "./CV";
-import CVtemp1 from "./CVtemp1";
 import { doApiMethod, API_URL } from "../services/apiService";
 /*
 קומפווננט שהוא מציג דוגמאות לעיצובים , משתמש בקומפוננט שנקרא : 
@@ -29,7 +28,7 @@ const Template = () => {
     const url = API_URL + "/resumes/getinfo";
     const res = await doApiMethod(url, "POST", data);
 
-    nav(`/cvtemp${i}`, { state: { data: res.data } });
+    nav(`/cvtemp${i + 1}`, { state: { data: res.data } });
   };
 
   const imageGen = () =>

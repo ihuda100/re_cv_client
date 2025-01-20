@@ -19,7 +19,20 @@
   align-items: center;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.container11 {
+  width: 900px;
+  height: 100%;
+  border: 5px solid black;
+  padding: 20px;
+}
+
+.flex11 {
+  display: flex;
+  gap: 30px;
+}
+
+.flex12 {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
 }
