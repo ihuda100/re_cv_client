@@ -50,23 +50,11 @@ const HomeClient = () => {
       </h1>
       <div className="shadow-lg w-50 m-auto p-4 bg-white rounded-4">
         <p className="m-0">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-          ullam quasi, atque ipsa tenetur hic iure eius aliquid, quibusdam dolor
-          eligendi libero nemo natus iste sed commodi! Explicabo suscipit
-          dolorum sapiente quidem blanditiis, itaque aperiam? Ducimus sint autem
-          numquam neque in quaerat vel nostrum assumenda earum aut veniam quasi
-          molestias, nisi rerum error eveniet enim labore veritatis! Molestias
-          cumque ut in optio! Tempora in vero cum ducimus corporis accusamus ad
-          ab doloribus voluptates, animi pariatur amet laudantium dolores facere
-          quibusdam eligendi ipsum similique asperiores, est temporibus. Velit
-          magnam, autem, consequatur ut, quidem aspernatur repudiandae ad
-          excepturi consequuntur eligendi accusamus illum? Vel, doloremque.
-          Explicabo quas magnam minima nemo! Ut voluptates porro alias dicta
-          distinctio reprehenderit, est animi aliquam quibusdam, quo, at
-          mollitia ab laudantium soluta eos delectus iste cum enim facere quos
-          consequatur omnis doloremque optio! Doloribus et explicabo placeat
-          voluptatem sunt mollitia aspernatur, quam, eaque dignissimos nostrum
-          dolor quos provident?
+         Welcome to [השם של האתר], where innovation meets career growth.
+          Our mission is to empower job seekers and professionals by upgrading their resumes with the power of AI. 
+          We combine cutting-edge technology with industry insights to craft personalized, impactful resumes that stand out in today’s competitive job market.
+          Whether you're just starting your career or aiming for the next big opportunity, we're here to help you showcase your skills and accomplishments with clarity and confidence.
+          Let us help you open the door to your dream job.
         </p>
       </div>
       <div className="w-50 d-flex justify-content-around m-auto mt-5">
