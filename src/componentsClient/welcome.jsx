@@ -31,7 +31,12 @@ const Welcome = () => {
                 <div className="px-4" style={{ height: '100%', width: "60%" }}>
                     <div className="bg-white p-4 shadow-lg text-center" style={{ height: '100%', width: "80%", borderRadius: '16px' }}>
                         <h3 className="py-2">About Us</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deleniti dolore tenetur laboriosam numquam aliquam voluptas sint! Culpa iste mollitia nesciunt minus amet, labore eveniet beatae, rem quasi laboriosam tempora.</p>
+                        <p>At [Your Website Name], we believe that your resume should work as hard as you do.
+                            Our AI-driven platform is designed to transform your experience and achievements into a compelling story that resonates with recruiters and hiring managers.
+                            We’re passionate about helping individuals unlock their full potential by delivering modern, professional resumes tailored to today’s job market.
+                            With our tools, you can focus on what matters most—taking the next step in your career journey.
+
+</p>
                     </div>
                 </div>
             </div>
