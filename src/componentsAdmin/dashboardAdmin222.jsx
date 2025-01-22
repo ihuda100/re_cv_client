@@ -32,15 +32,14 @@ function DashboardAdmin222() {
       let data = await doApiGet(url);
       // console.log(data.data);
       setThisUser(data.data);
-      doApiAllTests();
+      doApiAllResumes();
     } catch (error) {
       console.log(error);
     }
   };
 
-  const doApiAllTests = async () => {
-    
-    let url = API_URL + "/chats/allChats/" + ThisID;
+  const doApiAllResumes = async () => {
+    let url = API_URL + "/resumes/" + ThisID;
     try {
       let data = await doApiGet(url);
       console.log(data.data);
@@ -50,18 +49,6 @@ function DashboardAdmin222() {
     }
   };
 
-  const steps = [
-    { label: "Name", step: 1 },
-    { label: "LastName", step: 2 },
-    { label: "Level", step: 3 },
-  ];
-
-  const stepst = [
-    { label: "Level", step: 1 },
-    { label: "Time", step: 2 },
-    { label: "Date", step: 3 },
-  ];
-
   return (
     <div className="container">
       <div style={{ textAlign: "center", justifyContent: "center" }}>
@@ -70,23 +57,32 @@ function DashboardAdmin222() {
       </div>
 
       <div>
-        <table className="table table-striped shadow-lg">
+        <table className="w-50 m-auto table table-striped shadow-lg">
           <thead>
             <tr>
               <th>List</th>
-              <th>date</th>
-              <th>level</th>
-              <th>time</th>
+              <th>Date</th>
+              <th>Previwe</th>
             </tr>
           </thead>
           <tbody>
-            {ar.map((user, index) => {
+            {ar.map((resume, index) => {
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{user.date_created ? user.date_created.substring(10, length - 1) : ""}</td>
-                  <td>{user.level}</td>
-                  <td>{user.time}</td>
+                  <td>
+                    {resume.dateCreated
+                      ? resume.dateCreated.substring(10, length - 1)
+                      : ""}
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-sm"
+                      onClick={() => toPreviwe(resume._id)}
+                    >
+                      <i className="bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                  </td>
                 </tr>
               );
             })}
