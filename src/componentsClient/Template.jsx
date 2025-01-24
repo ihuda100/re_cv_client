@@ -17,10 +17,8 @@ const Template = () => {
   const location = useLocation();
   let { data } = location.state || {};
   data = {
-    id: data,
+    id: "67914ed1ef1260518ad298a9",
   };
-
-  console.log(data);
 
   let imgs = [cv1, cv2, cv3];
 
@@ -29,6 +27,7 @@ const Template = () => {
     const res = await doApiMethod(url, "POST", data);
 
     nav(`/cvtemp${i + 1}`, { state: { data: res.data } });
+    console.log(i);
   };
 
   const imageGen = () =>
@@ -37,8 +36,8 @@ const Template = () => {
         height={"350px"}
         width={"300px"}
         src={el}
-        onClick={(e) => {
-          openImg(i + 1);
+        onClick={() => {
+          openImg(i);
         }}
         key={i + 1}
       />
