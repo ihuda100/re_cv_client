@@ -50,10 +50,13 @@ const HomeClient = () => {
       </h1>
       <div className="shadow-lg w-50 m-auto p-4 bg-white rounded-4">
         <p className="m-0">
-         Welcome to [השם של האתר], where innovation meets career growth.
-          Our mission is to empower job seekers and professionals by upgrading their resumes with the power of AI. 
-          We combine cutting-edge technology with industry insights to craft personalized, impactful resumes that stand out in today’s competitive job market.
-          Whether you're just starting your career or aiming for the next big opportunity, we're here to help you showcase your skills and accomplishments with clarity and confidence.
+          Welcome to Re:cv, where innovation meets career growth. Our mission is
+          to empower job seekers and professionals by upgrading their resumes
+          with the power of AI. We combine cutting-edge technology with industry
+          insights to craft personalized, impactful resumes that stand out in
+          today’s competitive job market. Whether you're just starting your
+          career or aiming for the next big opportunity, we're here to help you
+          showcase your skills and accomplishments with clarity and confidence.
           Let us help you open the door to your dream job.
         </p>
       </div>
