@@ -6,11 +6,14 @@ import cv3 from "../assets/cvImages/cv3.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import CV from "./CV";
 import { doApiMethod, API_URL } from "../services/apiService";
+
 /*
 קומפווננט שהוא מציג דוגמאות לעיצובים , משתמש בקומפוננט שנקרא : 
 CV.jsx
 
 */
+
+//Test data id: "67914ed1ef1260518ad298a9"
 
 const Template = () => {
   const nav = useNavigate();
@@ -20,8 +23,6 @@ const Template = () => {
     id: data,
   };
 
-  console.log(data);
-
   let imgs = [cv1, cv2, cv3];
 
   const openImg = async (i) => {
@@ -29,6 +30,7 @@ const Template = () => {
     const res = await doApiMethod(url, "POST", data);
 
     nav(`/cvtemp${i + 1}`, { state: { data: res.data } });
+    console.log(i);
   };
 
   const imageGen = () =>
@@ -37,8 +39,8 @@ const Template = () => {
         height={"350px"}
         width={"300px"}
         src={el}
-        onClick={(e) => {
-          openImg(i + 1);
+        onClick={() => {
+          openImg(i);
         }}
         key={i + 1}
       />

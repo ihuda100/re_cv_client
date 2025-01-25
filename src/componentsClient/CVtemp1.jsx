@@ -3,6 +3,7 @@ import "./cv.css";
 import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import Balancer from "react-wrap-balancer";
 
 const Form1 = () => {
   const location = useLocation();
@@ -45,14 +46,14 @@ const Form1 = () => {
           <div style={{ display: "flex" }}>
             {/*Header */}
             <div style={{ background: "grey", width: "50%" }}>
-              <h1>Name</h1>
+              <h1>{data.fullName}</h1>
               <h3>positon</h3>
             </div>
             <div>
               <ul>
-                <li>phone</li>
+                <li>{data.phone}</li>
                 <li>address</li>
-                <li>email</li>
+                <li>{data.email}</li>
               </ul>
             </div>
           </div>
@@ -60,12 +61,10 @@ const Form1 = () => {
           <hr />
           <div className="flex11">
             <h2>About me</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              vel, rerum, ipsa eligendi eos obcaecati nihil ea suscipit odio
-              accusantium, et laboriosam repudiandae ut delectus necessitatibus
-              temporibus voluptatem debitis quos.
-            </p>
+            <Balancer>
+              {" "}
+              <p>{data.body}</p>
+            </Balancer>
           </div>
           <hr />
           <div className="flex11">
