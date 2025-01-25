@@ -20,8 +20,11 @@ import Upload from "./componentsClient/Upload";
 import VerifyFinal from "./componentsClient/VerifyFinal";
 import Template from "./componentsClient/Template";
 import CVtemp1 from "./componentsClient/CVtemp1";
+
+import Previwe from "./componentsAdmin/Previwe";
 import CVtemp2 from "./componentsClient/CVtemp2";
 import CVtemp3 from "./componentsClient/CVtemp3";
+
 
 function AppRoutes() {
   return (
@@ -30,6 +33,7 @@ function AppRoutes() {
         <Route path="/admin" element={<LayoutAdmin />}>
           <Route index element={<DashboardAdmin />} />
           <Route path="/admin/userlist" element={<DashboardAdmin222 />} />
+          <Route path="/admin/previwe" element={<Previwe/>}/>
         </Route>
 
         <Route path="/" element={<LayoutClient />}>
