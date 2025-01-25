@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { API_URL, doApiGet } from "../services/apiService";
+import { useNavigate } from "react-router-dom";
 
 function DashboardAdmin222() {
   const initialUsers = [
@@ -21,6 +22,7 @@ function DashboardAdmin222() {
   let [ar, setAr] = useState(initialUsers);
   const ThisID = useSelector((state) => state.myDetailsSlice.idMorInfoAdmin);
   const [thisUser, setThisUser] = useState([]);
+  const nav = useNavigate();
 
   useEffect(() => {
     doApi();
@@ -48,6 +50,10 @@ function DashboardAdmin222() {
       console.log(error);
     }
   };
+
+  const toPreviwe = (id) => {
+    nav('/admin/previwe',{state: {data: id}});
+  }
 
   return (
     <div className="container">
