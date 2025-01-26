@@ -35,6 +35,7 @@ const Upload = () => {
       console.log("הקובץ הועלה בהצלחה:", response.data);
       nav('/verify',{ state: { data: response.data } })
     } catch (error) {
+      setLoading(false);
       console.error("שגיאה בהעלאת הקובץ:", error);
     }
   };

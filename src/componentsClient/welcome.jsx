@@ -53,7 +53,7 @@ const Welcome = () => {
         <div className="px-4" style={{ height: "100%", width: "60%" }}>
           <div
             className="bg-white p-4 shadow-lg text-center"
-            style={{ height: "100%", width: "80%", borderRadius: "16px" }}
+            style={{ width: "80%", borderRadius: "16px" }}
           >
             <h3 className="py-2">About Us</h3>
             <p>
