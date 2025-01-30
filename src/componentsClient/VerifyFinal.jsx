@@ -8,7 +8,6 @@ const VerifyFinal = () => {
   const location = useLocation();
   const { data } = location.state || {};
   const [info, setInfo] = useState(data);
-  console.log(info?.body[0].key);
 
   const sendToPDF = async () => {
     const url = API_URL + "/resumes/update";
