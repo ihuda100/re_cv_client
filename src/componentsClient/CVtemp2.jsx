@@ -10,6 +10,14 @@ const Form2 = () => {
   let { data } = location.state || {};
   console.log(data);
 
+  //arr= obj to arr, map arr and destracture .
+
+  let arr = data[0].body;
+
+  const data11 = arr.map((el) => el.value);
+
+  const [education, workExp, skills, sum] = data11;
+
   //pdf download
   const printRef = React.useRef(null);
 
@@ -42,35 +50,46 @@ const Form2 = () => {
   return (
     <>
       <div className="center">
-        <div ref={printRef} className="container11" style={{ padding: "20px" }}>
-          <div
-            style={{ borderBottom: "5px solid green", flexDirection: "column" }}
-            className="center"
-          >
-            <h1>{data.fullName}</h1>
-            <h2>position</h2>
-          </div>
-          <div>
-            <h2>professional summary</h2>
-            <p>
-              <Balancer>
-                {" "}
-                Bal Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                deserunt inventore voluptas voluptatibus porro dicta. Repellat
-                vitae adipisci amet accusamus? Sit iure cupiditate corporis sed?
-                Dolores saepe in voluptate? Accusamus?
-              </Balancer>
-            </p>
-            <div className="flex12" style={{ margin: "10px", gap: "20px" }}>
-              <h5>phone: {data.phone}</h5>
-              <h5>email: {data.email}</h5>
-              <h5>address</h5>
+        <div className="container11" style={{ padding: "50px" }}>
+          <div ref={printRef}>
+            <div
+              style={{
+                borderBottom: "5px solid green",
+                flexDirection: "column",
+              }}
+              className="center"
+            >
+              <h1>{data[0].fullName}</h1>
+              <h2>position</h2>
             </div>
-          </div>
-          <div>
-            <p>
-              <Balancer>{data.body}</Balancer>
-            </p>
+            <div>
+              <h2>professional summary:</h2>
+              <p>
+                <Balancer> {sum}</Balancer>
+              </p>
+              <div className="flex12" style={{ margin: "10px", gap: "20px" }}>
+                <h5 className="headGreen">Phone: {data[0].phone}</h5>
+                <h5 className="headGreen">Email: {data[0].email}</h5>
+              </div>
+            </div>
+            <div>
+              <h2>Education:</h2>
+              <p>
+                <Balancer>{education}</Balancer>
+              </p>
+            </div>
+            <div>
+              <h2>Work Experience:</h2>
+              <p>
+                <Balancer>{workExp}</Balancer>
+              </p>
+            </div>
+            <div>
+              <h2>Skills:</h2>
+              <p>
+                <Balancer>{skills}</Balancer>
+              </p>
+            </div>
           </div>
         </div>
       </div>
