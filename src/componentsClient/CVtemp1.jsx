@@ -9,6 +9,15 @@ const Form1 = () => {
   const location = useLocation();
   let { data } = location.state || {};
   console.log(data);
+  console.log(data[0].body[0]);
+
+  //arr= obj to arr, map arr and destracture .
+
+  let arr = data[0].body;
+
+  const data11 = arr.map((el) => el.value);
+
+  const [education, workExp, skills, sum] = data11;
 
   //pdf download
   const printRef = React.useRef(null);
@@ -43,80 +52,69 @@ const Form1 = () => {
     <>
       <div className="center">
         <div ref={printRef} className="container11">
-          <div style={{ display: "flex" }}>
-            {/*Header */}
-            <div style={{ background: "grey", width: "50%" }}>
-              <h1>{data.fullName}</h1>
-              <h3>positon</h3>
+          <div ref={printRef}>
+            <div style={{ display: "flex" }}>
+              {/*Header */}
+              <div style={{ background: "grey", width: "50%" }}>
+                <h1>{data[0].fullName}</h1>
+                <h3>positon</h3>
+              </div>
+              <div>
+                <ul>
+                  <li>{data[0].phone}</li>
+
+                  <li>{data[0].email}</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <ul>
-                <li>{data.phone}</li>
-                <li>address</li>
-                <li>{data.email}</li>
-              </ul>
+            {/* header end */}
+            <hr />
+            <div className="flex11">
+              <h2>About me</h2>
+              <Balancer>
+                {" "}
+                <p>{sum}</p>
+              </Balancer>
             </div>
-          </div>
-          {/* header end */}
-          <hr />
-          <div className="flex11">
-            <h2>About me</h2>
-            <Balancer>
-              {" "}
-              <p>{data.body}</p>
-            </Balancer>
-          </div>
-          <hr />
-          <div className="flex11">
-            <div>
-              <h2>Experience</h2>
+            <hr />
+            <div className="flex11">
+              <div>
+                <h2>Experience</h2>
+                <Balancer>
+                  {" "}
+                  <p>{workExp}</p>
+                </Balancer>
+              </div>
             </div>
-            <div>
-              <h3>company name</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus, expedita eius repellendus vel exercitationem
-                enim fuga, obcaecati aut rem est mollitia. Id asperiores
-                eligendi ipsam illum debitis vero ipsa impedit.
-              </p>
+            <hr />
+            <div className="flex11">
+              <div>
+                <h2>Education</h2>
+                <p>{education}</p>
+              </div>
             </div>
-          </div>
-          <hr />
-          <div className="flex11">
-            <div>
-              <h2>Education</h2>
-            </div>
-            <div>
-              <h3>university</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus, expedita eius repellendus vel exercitationem
-                enim fuga, obcaecati aut rem est mollitia. Id asperiores
-                eligendi ipsam illum debitis vero ipsa impedit.
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex12">
-            <div>
-              <h1>Language</h1>
-              <ul>
-                <li>Hebrew</li>
-                <li>English</li>
-                <li>Geramn</li>
-              </ul>
-            </div>
-            <div>
-              <h2>Expertise</h2>
-            </div>
-            <div>
-              <h2>Refrence</h2>
+            <hr />
+            <div className="flex12">
+              <div>
+                <h1>Language</h1>
+                <ul>
+                  <li>Hebrew</li>
+                  <li>English</li>
+                  <li>Geramn</li>
+                </ul>
+              </div>
+              <div>
+                <h2>Expertise</h2>
+                <p>{skills}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button className="btn btn-dark" onClick={handleDownloadPdf}>Download</button>
+        <button className="btn btn-dark " onClick={handleDownloadPdf}>
+          Download
+        </button>
       </div>
     </>
   );

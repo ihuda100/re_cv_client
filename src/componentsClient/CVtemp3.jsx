@@ -10,6 +10,14 @@ const Form3 = () => {
   let { data } = location.state || {};
   console.log(data);
 
+  //arr= obj to arr, map arr and destracture .
+
+  let arr = data[0].body;
+
+  const data11 = arr.map((el) => el.value);
+
+  const [education, workExp, skills, sum] = data11;
+
   //pdf download
   const printRef = React.useRef(null);
 
@@ -41,26 +49,47 @@ const Form3 = () => {
   return (
     <>
       <div className="center">
-        <div ref={printRef} className="container11">
-          <div style={{ background: "#C4D9FF", padding: "10px" }}>
-            <h1>{data.fullName}</h1>
-            <h2>occupation</h2>
-          </div>
-          <div className="flex12">
-            <div style={{ background: "#C4D9FF", width: "50%" }}>
-              <h3>Profile:</h3>
-              <Balancer>
-                <p>{data.body}</p>
-              </Balancer>
-              <h3>contact me:</h3>
-              <p>Phone: {data.phone}</p>
-              <p>Emial: {data.email}</p>
+        <div className="container11">
+          <div ref={printRef}>
+            <div
+              style={{ background: "#C4D9FF", padding: "10px", width: "100%" }}
+              className="center"
+            >
+              <h1>{data[0].fullName}</h1>
             </div>
-            <div>
-              <h3>Education:</h3>
-              <h3>Language:</h3>
-              <h3>Skills:</h3>
-              <h3>Experience:</h3>
+            <div className="flex12">
+              <div style={{ background: "#C4D9FF", width: "50%" }}>
+                <h3>Profile:</h3>
+
+                <h3>contact me:</h3>
+                <p>Phone: {data[0].phone}</p>
+                <p>Email: {data[0].email}</p>
+              </div>
+              <div>
+                <div>
+                  {" "}
+                  <h3>Education:</h3>
+                  <Balancer>
+                    {" "}
+                    <p>{education}</p>
+                  </Balancer>
+                </div>
+                <div>
+                  {" "}
+                  <h3>Skills:</h3>
+                  <Balancer>
+                    {" "}
+                    <p>{skills}</p>
+                  </Balancer>
+                </div>
+                <div>
+                  <h3>Experience:</h3>
+                  <Balancer>
+                    {" "}
+                    <p>{workExp}</p>
+                  </Balancer>
+                </div>
+              </div>
             </div>
           </div>
         </div>

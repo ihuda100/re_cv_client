@@ -29,7 +29,7 @@ const Template = () => {
     const url = API_URL + "/resumes/getinfo";
     const res = await doApiMethod(url, "POST", data);
 
-    nav(`/cvtemp${i + 1}`, { state: { data: res.data } });
+    nav(`/cvtemp${i + 1}`, { state: { data: [res.data] } });
     console.log(i);
   };
 
