@@ -60,10 +60,9 @@ const Form2 = () => {
               className="center"
             >
               <h1>{data[0].fullName}</h1>
-              <h2>position</h2>
             </div>
             <div>
-              <h2>professional summary:</h2>
+              <h2 className="cvColor">professional summary:</h2>
               <p>
                 <Balancer> {sum}</Balancer>
               </p>
@@ -73,19 +72,19 @@ const Form2 = () => {
               </div>
             </div>
             <div>
-              <h2>Education:</h2>
+              <h2 className="cvColor">Education:</h2>
               <p>
                 <Balancer>{education}</Balancer>
               </p>
             </div>
             <div>
-              <h2>Work Experience:</h2>
+              <h2 className="cvColor">Work Experience:</h2>
               <p>
                 <Balancer>{workExp}</Balancer>
               </p>
             </div>
             <div>
-              <h2>Skills:</h2>
+              <h2 className="cvColor">Skills:</h2>
               <p>
                 <Balancer>{skills}</Balancer>
               </p>
