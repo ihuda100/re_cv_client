@@ -8,7 +8,6 @@ import Page404 from "./componentsClient/Page404";
 import Welcome from "./componentsClient/welcome";
 import HomeClient from "./componentsClient/homeClient";
 import DashboardAdmin from "./componentsAdmin/dashboardAdmin";
-import DashboardAdmin222 from "./componentsAdmin/dashboardAdmin222";
 import ForgotPass from "./componentsClient/forgotPass";
 import Varification from "./componentsClient/varification";
 import Submit from "./componentsClient/submit";
@@ -25,6 +24,7 @@ import Previwe from "./componentsAdmin/Previwe";
 import CVtemp2 from "./componentsClient/CVtemp2";
 import CVtemp3 from "./componentsClient/CVtemp3";
 import History from "./componentsClient/History";
+import UserList from "./componentsAdmin/UserList";
 
 
 function AppRoutes() {
@@ -33,7 +33,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/admin" element={<LayoutAdmin />}>
           <Route index element={<DashboardAdmin />} />
-          <Route path="/admin/userlist" element={<DashboardAdmin222 />} />
+          <Route path="/admin/userlist" element={<UserList />} />
           <Route path="/admin/previwe" element={<Previwe/>}/>
         </Route>
 

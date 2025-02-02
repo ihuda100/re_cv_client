@@ -13,7 +13,7 @@ export const doApiGet = async (_url) => {
     return data;
   }
   catch(err){
-    console.log(err.response.data);
+    console.error(err.response.data);
     throw err
   }
 }
@@ -32,7 +32,7 @@ export const doApiMethod = async (_url,_method,_body) => {
       return data;
     }
     catch(err){
-      console.log(err ,err.response);
+      console.error(err ,err.response);
       throw err
     }
   }
