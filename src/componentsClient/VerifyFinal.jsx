@@ -15,12 +15,13 @@ const VerifyFinal = () => {
     console.log(res.data);
     nav("/template", { state: { data: info._id } });
   };
-  const handleChange = (e) => {
-    const { name, value ,index} = e.target;
+  const handleChange = (e, i) => {
+    const { name, value } = e.target;
     if (name == "body") {
-      setInfo({
-        ...info,
-        [name[index].value]: value,
+      setInfo((prevInfo) => {
+        const updateBody = [...prevInfo.body];
+        updateBody[i] = { ...updateBody[i], value };
+        return { ...prevInfo, body: updateBody };
       });
     } else {
       setInfo({
@@ -28,12 +29,8 @@ const VerifyFinal = () => {
         [name]: value,
       });
     }
-    console.log(value);
-    console.log(info);
   };
 
-  // let lng = info?.body.length;
-  // console.log(lng);
   return (
     <div
       style={{
@@ -48,7 +45,6 @@ const VerifyFinal = () => {
       </div>
 
       <form
-        // onSubmit={sendToPDF}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -94,16 +90,17 @@ const VerifyFinal = () => {
         />
         {info?.body.map((item, i) => {
           return (
-            <div key={i} style={{gap: "10px"}}>
+            <div key={i} style={{ gap: "10px" }}>
               <label htmlFor="">{item?.key}</label>
               {/* <br /> */}
-              <textarea className="w-100"
+              <textarea
+                className="w-100"
                 rows={3}
                 type="text"
                 name="body"
                 index={i}
                 value={item?.value}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, i)}
               />
             </div>
           );

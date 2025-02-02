@@ -4,23 +4,9 @@ import { API_URL, doApiGet } from "../services/apiService";
 import { useNavigate } from "react-router-dom";
 import gif from "../assets/gif-loading.webp";
 
-function DashboardAdmin222() {
-  // const initialUsers = [
-  //   {
-  //     id: 1,
-  //     tate: "William Justice",
-  //     time: "Davis",
-  //     level: "hvusa",
-  //   },
-  //   {
-  //     id: 2,
-  //     tate: "William Justice",
-  //     time: "Davis",
-  //     level: "hvusa",
-  //   },
-  // ];
-  
+function UserList() {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [ar, setAr] = useState([]);
   const ThisID = useSelector((state) => state.myDetailsSlice.idMorInfoAdmin);
   const [thisUser, setThisUser] = useState([]);
@@ -51,7 +37,9 @@ function DashboardAdmin222() {
       console.log(data.data);
       setAr(data.data);
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.error);
+      // alert(error.response.data.error);
+      setError(error.response.data.error);
     }
   };
 
@@ -65,6 +53,8 @@ function DashboardAdmin222() {
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
         </div>
+      ) : error ? (
+        <p className="text-center text-danger m-5 h3">{error}</p>
       ) : (
         <>
           <div className="container">
@@ -112,4 +102,4 @@ function DashboardAdmin222() {
   );
 }
 
-export default DashboardAdmin222;
+export default UserList;

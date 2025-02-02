@@ -37,6 +37,7 @@ const Upload = () => {
     } catch (error) {
       setLoading(false);
       console.error("שגיאה בהעלאת הקובץ:", error);
+      alert()
     }
   };
 

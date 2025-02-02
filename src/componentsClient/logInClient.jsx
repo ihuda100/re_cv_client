@@ -23,7 +23,6 @@ const loginClient = () => {
     try {
       let resp = await doApiMethod(url, "POST", _dataBody);
       console.log(resp.data);
-
       if (resp.data.token) {
         saveTokenLocal(resp.data.token);
         dispatch(addEmail({ email: _dataBody.email }));
