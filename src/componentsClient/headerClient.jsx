@@ -22,6 +22,9 @@ function HeaderClient() {
     dispatch(addIfShowNav({ ifShowNav: false }));
     nav("/logout");
   };
+  const onHistory = () => {
+    nav("/history");
+  };
   const onAdminClick = () => {
     nav("/Admin");
   };
@@ -63,6 +66,14 @@ function HeaderClient() {
         {IfShowNav ? (
           <button className="btn btn-info border-black" onClick={onlogout}>
             logout
+          </button>
+        ) : (
+          ""
+        )}
+
+        {IfShowNav ? (
+          <button className="btn btn-info border-black" onClick={onHistory}>
+            History
           </button>
         ) : (
           ""

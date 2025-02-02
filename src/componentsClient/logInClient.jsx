@@ -33,6 +33,7 @@ const loginClient = () => {
     }
     catch (err) {
       console.log(err.response.data.err);
+      alert(err.response.data.err)
     }
   }
 

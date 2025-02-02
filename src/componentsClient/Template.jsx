@@ -19,6 +19,7 @@ const Template = () => {
   const nav = useNavigate();
   const location = useLocation();
   let { data } = location.state || {};
+  console.log(data)
   data = {
     id: data,
   };
