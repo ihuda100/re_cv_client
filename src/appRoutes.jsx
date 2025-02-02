@@ -24,6 +24,7 @@ import CVtemp1 from "./componentsClient/CVtemp1";
 import Previwe from "./componentsAdmin/Previwe";
 import CVtemp2 from "./componentsClient/CVtemp2";
 import CVtemp3 from "./componentsClient/CVtemp3";
+import History from "./componentsClient/History";
 
 
 function AppRoutes() {
@@ -43,6 +44,7 @@ function AppRoutes() {
           <Route path="/signup" element={<SignUpClient />} />
           <Route path="/varification" element={<Varification />} />
           <Route path="/homeClient" element={<HomeClient />} />
+          <Route path="/history" element={<History />} />
           <Route path="/form" element={<Form />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/verify" element={<VerifyFinal />} />

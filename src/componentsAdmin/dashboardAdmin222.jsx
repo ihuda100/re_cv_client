@@ -45,7 +45,7 @@ function DashboardAdmin222() {
   };
 
   const doApiAllResumes = async () => {
-    let url = API_URL + "/resumes/" + ThisID;
+    let url = API_URL + "/resumes/userlist/" + ThisID;
     try {
       let data = await doApiGet(url);
       console.log(data.data);
