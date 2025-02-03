@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cv.css";
 import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Balancer from "react-wrap-balancer";
+import CVrender from "./CVrender";
 
 const Form1 = () => {
   const location = useLocation();
@@ -14,10 +14,7 @@ const Form1 = () => {
   //arr= obj to arr, map arr and destracture .
 
   let arr = data[0].body;
-
-  const data11 = arr.map((el) => el.value);
-
-  const [education, workExp, skills, sum] = data11;
+  console.log(arr);
 
   //pdf download
   const printRef = React.useRef(null);
@@ -51,8 +48,8 @@ const Form1 = () => {
   return (
     <>
       <div className="center">
-        <div ref={printRef} className="container11">
-          <div ref={printRef}>
+        <div className="container11" style={{ width: "40%" }}>
+          <div ref={printRef} style={{ padding: "20px" }}>
             <div style={{ display: "flex" }}>
               {/*Header */}
               <div style={{ background: "grey", width: "50%" }}>
@@ -68,46 +65,7 @@ const Form1 = () => {
               </div>
             </div>
             {/* header end */}
-            <hr />
-            <div className="flex11">
-              <h2>About me</h2>
-              <Balancer>
-                {" "}
-                <p>{sum}</p>
-              </Balancer>
-            </div>
-            <hr />
-            <div className="flex11">
-              <div>
-                <h2>Experience</h2>
-                <Balancer>
-                  {" "}
-                  <p>{workExp}</p>
-                </Balancer>
-              </div>
-            </div>
-            <hr />
-            <div className="flex11">
-              <div>
-                <h2>Education</h2>
-                <p>{education}</p>
-              </div>
-            </div>
-            <hr />
-            <div className="flex12">
-              <div>
-                <h1>Language</h1>
-                <ul>
-                  <li>Hebrew</li>
-                  <li>English</li>
-                  <li>Geramn</li>
-                </ul>
-              </div>
-              <div>
-                <h2>Expertise</h2>
-                <p>{skills}</p>
-              </div>
-            </div>
+            <CVrender data={arr} />
           </div>
         </div>
       </div>
