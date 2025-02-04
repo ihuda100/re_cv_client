@@ -4,10 +4,10 @@ import HeaderClient from './headerClient';
 
 function LayoutClient() {
     return (
-        <React.Fragment>
+        <div style={{ backgroundColor: "#333" }} >
             <HeaderClient />
             <Outlet />
-        </React.Fragment>
+        </div>
     )
 }
 

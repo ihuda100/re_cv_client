@@ -19,7 +19,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="container-fluid mt-5" style={{ backgroundColor: "#333", minHeight: "100vh", color: "white" }}>
+    <div className="container-fluid" style={{ minHeight: "100vh", color: "white" }}>
       <div
         className="d-flex justify-content-around p-5 m-3"
         style={{ height: "350px" }}

@@ -61,7 +61,7 @@ function SignUpClient() {
   };
 
   return (
-    <>
+    <div style={{ height: "100vh" }}>
       <div
         className=" container mt-5 shadow-lg p-4 d-flex flex-column text-center"
         style={{ width: "80%", maxWidth: "500px", backgroundColor: "white" }}
@@ -150,7 +150,7 @@ function SignUpClient() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

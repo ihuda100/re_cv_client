@@ -30,8 +30,9 @@ function HeaderClient() {
   };
 
   return (
-    <div className="p-2 container " style={{ width: "100%", backgroundColor: "#333" }}>
-      <div className="d-flex justify-content-between ">
+    <div className="p-2 container " style={{ width: "40em" }}>
+
+      <div className="d-flex justify-content-around ">
         {IfShowNav ? (
           " "
         ) : (

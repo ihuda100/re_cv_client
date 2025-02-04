@@ -4,10 +4,10 @@ import HeaderAdmin from './headerAdmin';
 
 function LayoutAdmin() {
   return (
-    <React.Fragment>
+    <div style={{ backgroundColor: "#333" }}>
     <HeaderAdmin />
     <Outlet />
-  </React.Fragment>
+  </div>
   )
 }
 

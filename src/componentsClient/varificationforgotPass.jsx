@@ -66,7 +66,8 @@ function VarificationforgotPass() {
   };
 
   return (
-    <>
+    <div style={{ height: "100vh" }}>
+
       <div className=" container mt-5 shadow-lg p-4 d-flex flex-column text-center" style={{ width: '80%', maxWidth: '500px', backgroundColor: 'white' }}>
         <div className="row justify-content-center">
           {/* <img src="" alt="" /> */}
@@ -99,7 +100,7 @@ function VarificationforgotPass() {
             <p onClick={sendAgain} className='mt-2 text-danger '>Didn't get a code?</p>
         </div>
       </div>
-    </>
+    </div>
   );
 
 }

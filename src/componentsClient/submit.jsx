@@ -40,7 +40,8 @@ function Submit() {
 
 
   return (
-    <>
+    <div style={{ height: "100vh" }}>
+
       <div className=" d-flex justify-content-center align-items-center mt-5">
         <div
           className="shadow-lg rounded p-4 d-flex flex-column"
@@ -71,7 +72,7 @@ function Submit() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

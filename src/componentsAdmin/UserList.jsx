@@ -48,7 +48,8 @@ function UserList() {
   };
 
   return (
-    <>
+    <div style={{ height: "100vh" }}>
+
       {loading ? (
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
@@ -98,7 +99,7 @@ function UserList() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 

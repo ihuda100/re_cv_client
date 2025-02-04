@@ -32,6 +32,8 @@ const VerifyFinal = () => {
   };
 
   return (
+    <div style={{ height: "100vh" }}>
+
     <div
       style={{
         display: "flex",
@@ -112,6 +114,7 @@ const VerifyFinal = () => {
           Verify your data
         </button>
       </div>
+    </div>
     </div>
   );
 };

@@ -85,6 +85,8 @@ const DashboardAdmin = () => {
   // }
 
   return (
+    <div style={{ height: "100vh" }}>
+
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-4 ">
         <div className="d-flex">
@@ -142,6 +144,7 @@ const DashboardAdmin = () => {
           })}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

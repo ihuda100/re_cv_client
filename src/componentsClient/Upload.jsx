@@ -42,6 +42,8 @@ const Upload = () => {
   };
 
   return (
+    <div style={{ height: "100vh" }}>
+
     <div className="mt-5 text-center">
       <h1 className="mb-3">Upload your CV file</h1>
       <input
@@ -55,6 +57,7 @@ const Upload = () => {
       </button>
       <br />
       {loading && (<img src={gif} alt="loading" width={50}/>)}
+    </div>
     </div>
   );
 };
