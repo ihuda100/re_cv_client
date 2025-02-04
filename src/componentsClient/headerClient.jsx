@@ -30,41 +30,44 @@ function HeaderClient() {
   };
 
   return (
-    <div className="p-2 container " style={{ width: "30em" }}>
+    <div className="p-2 container " style={{ width: "100%", backgroundColor: "#333" }}>
       <div className="d-flex justify-content-between ">
-        {/* <button onClick={onWelcomeClick}>Welcom</button>
-      <button onClick={onSignUpClick}>Sign Up</button>
-      <button onClick={onVarifictionClick}>varifiction</button>
-      <button onClick={onloginClick}>Login</button>
-      <button onClick={onSubmitClick}>submit</button>
-      <button onClick={onVarificationforgotPass}>Varification2</button>
-      <button onClick={onForgotPassClick}>forgot Pass</button> */}
-        {/* <button onClick={onAvatarClick}>avatar</button> */}
-        {/* <button onClick={onChatClick}>chat</button> */}
-        {/* <button onClick={onChangePassClick}>change pass</button> */}
         {IfShowNav ? (
           " "
         ) : (
           <button
-            className="btn btn-info border-black "
+            className="btn border-black "
+            style={{ backgroundColor: "gold", color: "black" }}
             onClick={onWelcomeClick}
           >
             Welcome
           </button>
         )}
         {IfShowNav ? (
-          <button className="btn btn-info border-black " onClick={onHomeClick}>
+          <button
+            className="btn border-black "
+            style={{ backgroundColor: "gold", color: "black" }}
+            onClick={onHomeClick}
+          >
             Home
           </button>
         ) : (
           ""
         )}
-        <button className="btn btn-info border-black" onClick={onHelpClick}>
+        <button
+          className="btn border-black"
+          style={{ backgroundColor: "gold", color: "black" }}
+          onClick={onHelpClick}
+        >
           help
         </button>
 
         {IfShowNav ? (
-          <button className="btn btn-info border-black" onClick={onlogout}>
+          <button
+            className="btn border-black"
+            style={{ backgroundColor: "gold", color: "black" }}
+            onClick={onlogout}
+          >
             logout
           </button>
         ) : (
@@ -72,7 +75,11 @@ function HeaderClient() {
         )}
 
         {IfShowNav ? (
-          <button className="btn btn-info border-black" onClick={onHistory}>
+          <button
+            className="btn border-black"
+            style={{ backgroundColor: "gold", color: "black" }}
+            onClick={onHistory}
+          >
             History
           </button>
         ) : (
@@ -80,15 +87,16 @@ function HeaderClient() {
         )}
 
         {IfShowNav && IsAdmin ? (
-          <button className="btn btn-info border-black" onClick={onAdminClick}>
+          <button
+            className="btn border-black"
+            style={{ backgroundColor: "gold", color: "black" }}
+            onClick={onAdminClick}
+          >
             Admin
           </button>
         ) : (
           ""
         )}
-
-        {/* <button className='btn btn-info border-black ' onClick={onHomeClick}>Home</button> */}
-        {/* <button onClick={onGameClick}>Game</button> */}
       </div>
     </div>
   );
