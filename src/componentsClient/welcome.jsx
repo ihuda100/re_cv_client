@@ -19,7 +19,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="container-fluid mt-5">
+    <div className="container-fluid mt-5" style={{ backgroundColor: "#333", minHeight: "100vh", color: "white" }}>
       <div
         className="d-flex justify-content-around p-5 m-3"
         style={{ height: "350px" }}
@@ -29,7 +29,6 @@ const Welcome = () => {
           style={{ height: "100%", width: "40%" }}
         >
           <div className="m-3">
-            {" "}
             <img
               style={{ height: "10%", width: "10%", borderRadius: "50px" }}
               src="src/assets/react.svg"
@@ -38,13 +37,15 @@ const Welcome = () => {
           </div>
           <button
             onClick={toSignIn}
-            className="btn btn-outline-primary m-3 w-50"
+            className="btn m-3 w-50"
+            style={{ backgroundColor: "gold", color: "black", border: "none" }}
           >
             Sign In
           </button>
           <button
             onClick={toSignUp}
-            className="btn btn-outline-primary m-3 w-50"
+            className="btn m-3 w-50"
+            style={{ backgroundColor: "gold", color: "black", border: "none" }}
           >
             Sign Up
           </button>
@@ -52,8 +53,8 @@ const Welcome = () => {
 
         <div className="px-4" style={{ height: "100%", width: "60%" }}>
           <div
-            className="bg-white p-4 shadow-lg text-center"
-            style={{ width: "80%", borderRadius: "16px" }}
+            className="p-4 shadow-sm text-center"
+            style={{ width: "80%", borderRadius: "px", color: "gold"  }}
           >
             <h3 className="py-2">About Us</h3>
             <p>
