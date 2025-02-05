@@ -4,7 +4,7 @@ import HeaderAdmin from './headerAdmin';
 
 function LayoutAdmin() {
   return (
-    <div style={{ backgroundColor: "#333" }}>
+    <div style={{ backgroundColor: "#FFFFFF" }}>
     <HeaderAdmin />
     <Outlet />
   </div>

@@ -5,10 +5,11 @@ const CVrender = ({ data }) => {
     <>
       {data.map((el, i) => {
         return (
-          <div key={i}>
-            <h1>{el.key}:</h1>
+          <div key={i} className="px-4"> 
+            <h4>{el.key}:</h4>
             <p>{el.value}</p>
-            <hr />
+            {i != data.length-1 && <hr />}
+            
           </div>
         );
       })}

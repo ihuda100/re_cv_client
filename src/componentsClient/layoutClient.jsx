@@ -4,7 +4,7 @@ import HeaderClient from './headerClient';
 
 function LayoutClient() {
     return (
-        <div style={{ backgroundColor: "#333" }} >
+        <div style={{ backgroundColor: "#FFFFFF" }} >
             <HeaderClient />
             <Outlet />
         </div>

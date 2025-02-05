@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../componentsClient/cv.css";
 import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-
+import CVrender from "../componentsClient/CVrender";
+import { API_URL, doApiMethod } from "../services/apiService";
 const Previwe = () => {
   const location = useLocation();
+  const [info, setInfo] = useState([{body:[]}])
   let { data } = location.state || {};
   console.log(data);
+  data = {
+    id: data,
+  };
+
+  // console.log(data[0].body[0]);
+  useEffect(() => {
+    doApi();
+  }, []);
+
+  const doApi = async () => {
+    const url = API_URL + "/resumes/getinfo";
+    const res = await doApiMethod(url, "POST", data);
+    setInfo([res.data]);
+  };
 
   //pdf download
   const printRef = React.useRef(null);
@@ -39,85 +55,54 @@ const Previwe = () => {
   };
 
   return (
-    <>
+    <>{info && <></>}
       <div className="center">
-        <div ref={printRef} className="container11">
-          <div style={{ display: "flex" }}>
-            {/*Header */}
-            <div style={{ background: "grey", width: "50%" }}>
-              <h1>Name</h1>
-              <h3>positon</h3>
+        <div className="border border-3" >
+          <div
+            ref={printRef}
+            className="d-flex flex-column"
+            style={{ height: "1131.44px", width: "800px" }}
+          >
+            <div className="mb-4"
+              style={{
+                display: "flex",
+                background: "#F2F8FA",
+                height: "200px",
+              }}
+            >
+              {/*Header */}
+              <div className="ps-5"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "50%",
+                  justifyContent: "center",
+                }}
+              >
+                <h1>{info[0]?.fullName}</h1>
+                <h3>positon</h3>
+              </div>
+              <div className="d-flex flex-column justify-content-center ps-3" >
+                <ul className="list-unstyled">
+                  {info[0]?.phone && (<div className="d-flex"><i class="bi bi-telephone-fill"></i><li className="ms-2">{info[0]?.phone}</li></div>)}
+                  {info[0]?.email && (<div className="d-flex"><i class="bi bi-envelope-at-fill"></i><li className="ms-2">{info[0]?.email}</li></div>)}
+                  {info[0]?.github && (<div className="d-flex"><i class="bi bi-github"></i><li className="ms-2">{info[0]?.github}</li></div>)}
+                  {info[0]?.linkdin && (<div className="d-flex"><i class="bi bi-linkedin"></i><li className="ms-2">{info[0]?.linkdin}</li></div>)}
+                </ul>
+              </div>
+
             </div>
-            <div>
-              <ul>
-                <li>phone</li>
-                <li>address</li>
-                <li>email</li>
-              </ul>
-            </div>
-          </div>
-          {/* header end */}
-          <hr />
-          <div className="flex11">
-            <h2>About me</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              vel, rerum, ipsa eligendi eos obcaecati nihil ea suscipit odio
-              accusantium, et laboriosam repudiandae ut delectus necessitatibus
-              temporibus voluptatem debitis quos.
-            </p>
-          </div>
-          <hr />
-          <div className="flex11">
-            <div>
-              <h2>Experience</h2>
-            </div>
-            <div>
-              <h3>company name</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus, expedita eius repellendus vel exercitationem
-                enim fuga, obcaecati aut rem est mollitia. Id asperiores
-                eligendi ipsam illum debitis vero ipsa impedit.
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex11">
-            <div>
-              <h2>Education</h2>
-            </div>
-            <div>
-              <h3>university</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus, expedita eius repellendus vel exercitationem
-                enim fuga, obcaecati aut rem est mollitia. Id asperiores
-                eligendi ipsam illum debitis vero ipsa impedit.
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex12">
-            <div>
-              <h1>Language</h1>
-              <ul>
-                <li>Hebrew</li>
-                <li>English</li>
-                <li>Geramn</li>
-              </ul>
-            </div>
-            <div>
-              <h2>Expertise</h2>
-            </div>
-            <div>
-              <h2>Refrence</h2>
-            </div>
+            {/* header end */}
+            <CVrender data={info[0]?.body} />
+            <div style={{ flexGrow: 1 }}></div>
+            <div style={{background: '#F2F8FA', height: '60px'}}></div>
           </div>
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button onClick={handleDownloadPdf}>Download</button>
+        <button className="btn btn-dark " onClick={handleDownloadPdf}>
+          Download
+        </button>
       </div>
     </>
   );
