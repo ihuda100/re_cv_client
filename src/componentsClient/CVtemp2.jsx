@@ -51,7 +51,7 @@ const Form2 = () => {
   return (
     <>
       <div className="center">
-        <div className="container11" style={{ padding: "50px" }}>
+        <div className="border border-3">
           <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
             <div
               style={{

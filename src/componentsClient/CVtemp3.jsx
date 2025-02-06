@@ -46,8 +46,8 @@ const Form3 = () => {
   return (
     <>
       <div className="center">
-        <div className="container11">
-          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
+      <div className="border border-3">
+      <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
             <div
               style={{ background: "#C4D9FF", padding: "10px", width: "100%" }}
               className="center"

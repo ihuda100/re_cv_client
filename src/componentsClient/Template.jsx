@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./cv.css";
 import cv1 from "../assets/cvImages/cv1.jpg";
 import cv2 from "../assets/cvImages/cv2.jpg";
@@ -6,6 +6,7 @@ import cv3 from "../assets/cvImages/cv3.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import CV from "./CV";
 import { doApiMethod, API_URL } from "../services/apiService";
+import VerifyFinal from "./VerifyFinal";
 
 /*
 קומפווננט שהוא מציג דוגמאות לעיצובים , משתמש בקומפוננט שנקרא : 
@@ -18,8 +19,9 @@ CV.jsx
 const Template = () => {
   const nav = useNavigate();
   const location = useLocation();
+  const [verify, setVerify] = useState(true);
   let { data } = location.state || {};
-  console.log(data)
+  console.log(data);
   data = {
     id: data,
   };
@@ -27,11 +29,19 @@ const Template = () => {
   let imgs = [cv1, cv2, cv3];
 
   const openImg = async (i) => {
-    const url = API_URL + "/resumes/getinfo";
-    const res = await doApiMethod(url, "POST", data);
-
-    nav(`/cvtemp${i + 1}`, { state: { data: [res.data] } });
-    console.log(i);
+    try {
+      const url = API_URL + "/resumes/getinfo";
+      const res = await doApiMethod(url, "POST", data);
+      nav(`/cvtemp${i + 1}`, { state: { data: [res.data] } });
+      console.log(i);
+    } catch (error) {
+      if (error.response.data.message == "Please verify you resumes") {
+        setVerify(false);
+      }
+      //     let url = API_URL + '/resumes/forverify/' +data.id
+      //     const res = await doApiMethod(url, "POST", data);
+      //     console.log(res);
+    }
   };
 
   const imageGen = () =>
@@ -68,6 +78,11 @@ const Template = () => {
           </div>
         </div>
       </div>
+      {!verify && (
+        <>
+          <h1 className="text-danger text-center p-3">Please verify you resumes</h1>{" "}
+        </>
+      )}
     </>
   );
 };
