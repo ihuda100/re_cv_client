@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Balancer from "react-wrap-balancer";
+import CVrender from "./CVrender";
 
 const Form2 = () => {
   const location = useLocation();
@@ -51,7 +52,7 @@ const Form2 = () => {
     <>
       <div className="center">
         <div className="container11" style={{ padding: "50px" }}>
-          <div ref={printRef}>
+          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
             <div
               style={{
                 borderBottom: "5px solid green",
@@ -62,32 +63,39 @@ const Form2 = () => {
               <h1>{data[0].fullName}</h1>
             </div>
             <div>
-              <h2 className="cvColor">professional summary:</h2>
-              <p>
-                <Balancer> {sum}</Balancer>
-              </p>
-              <div className="flex12" style={{ margin: "10px", gap: "20px" }}>
-                <h5 className="headGreen">Phone: {data[0].phone}</h5>
-                <h5 className="headGreen">Email: {data[0].email}</h5>
+              <h2 className="cvColor">Contact:</h2>
+
+              <div className="d-flex flex-column justify-content-center ps-3">
+                <ul className="list-unstyled">
+                  {data[0].phone && (
+                    <div className="d-flex">
+                      <i class="bi bi-telephone-fill"></i>
+                      <li className="ms-2">{data[0].phone}</li>
+                    </div>
+                  )}
+                  {data[0].email && (
+                    <div className="d-flex">
+                      <i class="bi bi-envelope-at-fill"></i>
+                      <li className="ms-2">{data[0].email}</li>
+                    </div>
+                  )}
+                  {data[0].github && (
+                    <div className="d-flex">
+                      <i class="bi bi-github"></i>
+                      <li className="ms-2">{data[0].github}</li>
+                    </div>
+                  )}
+                  {data[0].linkdin && (
+                    <div className="d-flex">
+                      <i class="bi bi-linkedin"></i>
+                      <li className="ms-2">{data[0].linkdin}</li>
+                    </div>
+                  )}
+                </ul>
               </div>
             </div>
             <div>
-              <h2 className="cvColor">Education:</h2>
-              <p>
-                <Balancer>{education}</Balancer>
-              </p>
-            </div>
-            <div>
-              <h2 className="cvColor">Work Experience:</h2>
-              <p>
-                <Balancer>{workExp}</Balancer>
-              </p>
-            </div>
-            <div>
-              <h2 className="cvColor">Skills:</h2>
-              <p>
-                <Balancer>{skills}</Balancer>
-              </p>
+              <CVrender data={arr} _color={"#77b254"} />
             </div>
           </div>
         </div>

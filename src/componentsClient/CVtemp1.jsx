@@ -45,13 +45,14 @@ const Form1 = () => {
   return (
     <>
       <div className="center">
-        <div className="border border-3" >
+        <div className="border border-3">
           <div
             ref={printRef}
             className="d-flex flex-column"
             style={{ height: "1131.44px", width: "800px" }}
           >
-            <div className="mb-4"
+            <div
+              className="mb-4"
               style={{
                 display: "flex",
                 background: "#F2F8FA",
@@ -59,7 +60,8 @@ const Form1 = () => {
               }}
             >
               {/*Header */}
-              <div className="ps-5"
+              <div
+                className="ps-5"
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -68,22 +70,40 @@ const Form1 = () => {
                 }}
               >
                 <h1>{data[0].fullName}</h1>
-                <h3>positon</h3>
               </div>
-              <div className="d-flex flex-column justify-content-center ps-3" >
+              <div className="d-flex flex-column justify-content-center ps-3">
                 <ul className="list-unstyled">
-                  {data[0].phone && (<div className="d-flex"><i class="bi bi-telephone-fill"></i><li className="ms-2">{data[0].phone}</li></div>)}
-                  {data[0].email && (<div className="d-flex"><i class="bi bi-envelope-at-fill"></i><li className="ms-2">{data[0].email}</li></div>)}
-                  {data[0].github && (<div className="d-flex"><i class="bi bi-github"></i><li className="ms-2">{data[0].github}</li></div>)}
-                  {data[0].linkdin && (<div className="d-flex"><i class="bi bi-linkedin"></i><li className="ms-2">{data[0].linkdin}</li></div>)}
+                  {data[0].phone && (
+                    <div className="d-flex">
+                      <i class="bi bi-telephone-fill"></i>
+                      <li className="ms-2">{data[0].phone}</li>
+                    </div>
+                  )}
+                  {data[0].email && (
+                    <div className="d-flex">
+                      <i class="bi bi-envelope-at-fill"></i>
+                      <li className="ms-2">{data[0].email}</li>
+                    </div>
+                  )}
+                  {data[0].github && (
+                    <div className="d-flex">
+                      <i class="bi bi-github"></i>
+                      <li className="ms-2">{data[0].github}</li>
+                    </div>
+                  )}
+                  {data[0].linkdin && (
+                    <div className="d-flex">
+                      <i class="bi bi-linkedin"></i>
+                      <li className="ms-2">{data[0].linkdin}</li>
+                    </div>
+                  )}
                 </ul>
               </div>
-
             </div>
             {/* header end */}
             <CVrender data={arr} />
             <div style={{ flexGrow: 1 }}></div>
-            <div style={{background: '#F2F8FA', height: '60px'}}></div>
+            <div style={{ background: "#F2F8FA", height: "60px" }}></div>
           </div>
         </div>
       </div>
