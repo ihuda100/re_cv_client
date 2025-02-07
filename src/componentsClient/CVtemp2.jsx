@@ -15,10 +15,6 @@ const Form2 = () => {
 
   let arr = data[0].body;
 
-  const data11 = arr.map((el) => el.value);
-
-  const [education, workExp, skills, sum] = data11;
-
   //pdf download
   const printRef = React.useRef(null);
 
