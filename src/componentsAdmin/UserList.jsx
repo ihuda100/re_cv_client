@@ -49,7 +49,6 @@ function UserList() {
 
   return (
     <div style={{ height: "100vh" }}>
-
       {loading ? (
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
@@ -69,7 +68,7 @@ function UserList() {
                   <tr>
                     <th>List</th>
                     <th>Date</th>
-                    <th>Previwe</th>
+                    <th>Preview</th>
                   </tr>
                 </thead>
                 <tbody>

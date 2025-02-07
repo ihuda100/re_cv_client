@@ -75,25 +75,25 @@ const Form1 = () => {
                 <ul className="list-unstyled">
                   {data[0].phone && (
                     <div className="d-flex">
-                      <i class="bi bi-telephone-fill"></i>
+                      <i className="bi bi-telephone-fill"></i>
                       <li className="ms-2">{data[0].phone}</li>
                     </div>
                   )}
                   {data[0].email && (
                     <div className="d-flex">
-                      <i class="bi bi-envelope-at-fill"></i>
+                      <i className="bi bi-envelope-at-fill"></i>
                       <li className="ms-2">{data[0].email}</li>
                     </div>
                   )}
                   {data[0].github && (
                     <div className="d-flex">
-                      <i class="bi bi-github"></i>
+                      <i className="bi bi-github"></i>
                       <li className="ms-2">{data[0].github}</li>
                     </div>
                   )}
                   {data[0].linkdin && (
                     <div className="d-flex">
-                      <i class="bi bi-linkedin"></i>
+                      <i className="bi bi-linkedin"></i>
                       <li className="ms-2">{data[0].linkdin}</li>
                     </div>
                   )}
@@ -101,7 +101,10 @@ const Form1 = () => {
               </div>
             </div>
             {/* header end */}
-            <CVrender data={arr} />
+            <div>
+              <CVrender data={arr} />
+            </div>
+
             <div style={{ flexGrow: 1 }}></div>
             <div style={{ background: "#F2F8FA", height: "60px" }}></div>
           </div>

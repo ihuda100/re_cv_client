@@ -86,65 +86,63 @@ const DashboardAdmin = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-
-    <div className="container mt-5">
-      <div className="d-flex justify-content-between align-items-center mb-4 ">
-        <div className="d-flex">
-          <input
-            style={{ borderRadius: "6px" }}
-            type="text"
-            value={searchText}
-            onChange={handleChange}
-            className="d-flex justify-content-between align-items-center mb-4 "
-            placeholder="Search Role"
-            id=""
-          />
-          <input
-            style={{ color: "black" }}
-            type="button"
-            onClick={onSearchClick}
-            value="Search"
-            className="btn btn-outline-info info border-black  d-flex justify-content-between align-items-center mb-4 "
-            stile={{ color: "black" }}
-          />
+      <div className="container mt-5">
+        <div className="d-flex justify-content-between align-items-center mb-4 ">
+          <div className="d-flex">
+            <input
+              style={{ borderRadius: "6px" }}
+              type="text"
+              value={searchText}
+              onChange={handleChange}
+              className="d-flex justify-content-between align-items-center mb-4 "
+              placeholder="Search Role"
+              id=""
+            />
+            <input
+              style={{ color: "black" }}
+              type="button"
+              onClick={onSearchClick}
+              value="Search"
+              className="btn btn-outline-info info border-black  d-flex justify-content-between align-items-center mb-4 "
+            />
+          </div>
         </div>
+
+        <table className="table table-striped shadow-lg">
+          <thead>
+            <tr>
+              <th>List</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>E-mail</th>
+              <th>Role</th>
+              <th>More Info</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ar.map((user, index) => {
+              return (
+                <tr key={user._id}>
+                  <td>{index + 1}</td>
+                  <td>{user.FirstName}</td>
+                  <td>{user.LastName}</td>
+                  <td>{user.email}</td>
+                  <td>{user.role}</td>
+
+                  <td>
+                    <button
+                      className="btn btn-sm"
+                      onClick={() => toAdmin2(user._id)}
+                    >
+                      <i className="bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
-
-      <table className="table table-striped shadow-lg">
-        <thead>
-          <tr>
-            <th>List</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>E-mail</th>
-            <th>Role</th>
-            <th>More Info</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ar.map((user, index) => {
-            return (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
-                <td>{user.FirstName}</td>
-                <td>{user.LastName}</td>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
-
-                <td>
-                  <button
-                    className="btn btn-sm"
-                    onClick={() => toAdmin2(user._id)}
-                  >
-                    <i className="bi bi-arrow-right-circle-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
     </div>
   );
 };

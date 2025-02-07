@@ -46,8 +46,8 @@ const Form3 = () => {
   return (
     <>
       <div className="center">
-      <div className="border border-3">
-      <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
+        <div className="border border-3">
+          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
             <div
               style={{ background: "#C4D9FF", padding: "10px", width: "100%" }}
               className="center"
@@ -55,31 +55,31 @@ const Form3 = () => {
               <h1>{data[0].fullName}</h1>
             </div>
             <div className="flex12">
-              <div style={{ background: "#C4D9FF", width: "50%" }}>
-                <h3>contact me:</h3>
+              <div style={{ background: "#C4D9FF" }} className="w-25">
+                <h3 className="ms-2">contact me:</h3>
                 <div className="d-flex flex-column justify-content-center ps-3">
                   <ul className="list-unstyled">
                     {data[0].phone && (
                       <div className="d-flex">
-                        <i class="bi bi-telephone-fill"></i>
+                        <i className="bi bi-telephone-fill"></i>
                         <li className="ms-2">{data[0].phone}</li>
                       </div>
                     )}
                     {data[0].email && (
                       <div className="d-flex">
-                        <i class="bi bi-envelope-at-fill"></i>
+                        <i className="bi bi-envelope-at-fill"></i>
                         <li className="ms-2">{data[0].email}</li>
                       </div>
                     )}
                     {data[0].github && (
                       <div className="d-flex">
-                        <i class="bi bi-github"></i>
+                        <i className="bi bi-github"></i>
                         <li className="ms-2">{data[0].github}</li>
                       </div>
                     )}
                     {data[0].linkdin && (
                       <div className="d-flex">
-                        <i class="bi bi-linkedin"></i>
+                        <i className="bi bi-linkedin"></i>
                         <li className="ms-2">{data[0].linkdin}</li>
                       </div>
                     )}

@@ -7,7 +7,7 @@ import CVrender from "../componentsClient/CVrender";
 import { API_URL, doApiMethod } from "../services/apiService";
 const Previwe = () => {
   const location = useLocation();
-  const [info, setInfo] = useState([{body:[]}])
+  const [info, setInfo] = useState([{ body: [] }]);
   let { data } = location.state || {};
   console.log(data);
   data = {
@@ -55,15 +55,17 @@ const Previwe = () => {
   };
 
   return (
-    <>{info && <></>}
+    <>
+      {info && <></>}
       <div className="center">
-        <div className="border border-3" >
+        <div className="border border-3">
           <div
             ref={printRef}
             className="d-flex flex-column"
             style={{ height: "1131.44px", width: "800px" }}
           >
-            <div className="mb-4"
+            <div
+              className="mb-4"
               style={{
                 display: "flex",
                 background: "#F2F8FA",
@@ -71,7 +73,8 @@ const Previwe = () => {
               }}
             >
               {/*Header */}
-              <div className="ps-5"
+              <div
+                className="ps-5"
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -82,20 +85,39 @@ const Previwe = () => {
                 <h1>{info[0]?.fullName}</h1>
                 <h3>positon</h3>
               </div>
-              <div className="d-flex flex-column justify-content-center ps-3" >
+              <div className="d-flex flex-column justify-content-center ps-3">
                 <ul className="list-unstyled">
-                  {info[0]?.phone && (<div className="d-flex"><i class="bi bi-telephone-fill"></i><li className="ms-2">{info[0]?.phone}</li></div>)}
-                  {info[0]?.email && (<div className="d-flex"><i class="bi bi-envelope-at-fill"></i><li className="ms-2">{info[0]?.email}</li></div>)}
-                  {info[0]?.github && (<div className="d-flex"><i class="bi bi-github"></i><li className="ms-2">{info[0]?.github}</li></div>)}
-                  {info[0]?.linkdin && (<div className="d-flex"><i class="bi bi-linkedin"></i><li className="ms-2">{info[0]?.linkdin}</li></div>)}
+                  {info[0]?.phone && (
+                    <div className="d-flex">
+                      <i className="bi bi-telephone-fill"></i>
+                      <li className="ms-2">{info[0]?.phone}</li>
+                    </div>
+                  )}
+                  {info[0]?.email && (
+                    <div className="d-flex">
+                      <i className="bi bi-envelope-at-fill"></i>
+                      <li className="ms-2">{info[0]?.email}</li>
+                    </div>
+                  )}
+                  {info[0]?.github && (
+                    <div className="d-flex">
+                      <i className="bi bi-github"></i>
+                      <li className="ms-2">{info[0]?.github}</li>
+                    </div>
+                  )}
+                  {info[0]?.linkdin && (
+                    <div className="d-flex">
+                      <i className="bi bi-linkedin"></i>
+                      <li className="ms-2">{info[0]?.linkdin}</li>
+                    </div>
+                  )}
                 </ul>
               </div>
-
             </div>
             {/* header end */}
             <CVrender data={info[0]?.body} />
             <div style={{ flexGrow: 1 }}></div>
-            <div style={{background: '#F2F8FA', height: '60px'}}></div>
+            <div style={{ background: "#F2F8FA", height: "60px" }}></div>
           </div>
         </div>
       </div>

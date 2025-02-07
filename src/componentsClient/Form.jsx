@@ -42,7 +42,7 @@ const Form = () => {
       }}
     >
       <div>
-        <h1>Please tell me about us</h1>
+        <h1>Please tell me about you</h1>
       </div>
 
       <form

@@ -59,31 +59,31 @@ const Form2 = () => {
               <h1>{data[0].fullName}</h1>
             </div>
             <div>
-              <h2 className="cvColor">Contact:</h2>
+              <h2 className="cvColor ms-2">Contact:</h2>
 
               <div className="d-flex flex-column justify-content-center ps-3">
                 <ul className="list-unstyled">
                   {data[0].phone && (
                     <div className="d-flex">
-                      <i class="bi bi-telephone-fill"></i>
+                      <i className="bi bi-telephone-fill"></i>
                       <li className="ms-2">{data[0].phone}</li>
                     </div>
                   )}
                   {data[0].email && (
                     <div className="d-flex">
-                      <i class="bi bi-envelope-at-fill"></i>
+                      <i className="bi bi-envelope-at-fill"></i>
                       <li className="ms-2">{data[0].email}</li>
                     </div>
                   )}
                   {data[0].github && (
                     <div className="d-flex">
-                      <i class="bi bi-github"></i>
+                      <i className="bi bi-github"></i>
                       <li className="ms-2">{data[0].github}</li>
                     </div>
                   )}
                   {data[0].linkdin && (
                     <div className="d-flex">
-                      <i class="bi bi-linkedin"></i>
+                      <i className="bi bi-linkedin"></i>
                       <li className="ms-2">{data[0].linkdin}</li>
                     </div>
                   )}
