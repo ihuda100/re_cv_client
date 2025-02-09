@@ -33,3 +33,31 @@
 .cvColor {
   color: #77b254;
 }
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-button {
+  background-color: #777;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button:hover {
+  background-color: #777;
+}
+
+.images-container {
+  display: flex;
+  gap: 30px;
+}
