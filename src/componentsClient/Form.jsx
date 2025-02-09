@@ -73,7 +73,7 @@ const Form = () => {
         <textarea type="text" id="body" />
       </form>
       <div style={{ padding: "20px" }}>
-        <button className="btn btn-success" onClick={sendDataForUpgrade}>
+        <button className="btn border-black" onClick={sendDataForUpgrade}>
           Submit
         </button>
       </div>

@@ -61,10 +61,10 @@ const HomeClient = () => {
         </p>
       </div>
       <div className="w-50 d-flex justify-content-around m-auto mt-5">
-        <button onClick={toUpload} className="btn btn-success">
+        <button onClick={toUpload} className="btn border-black">
           I have CV to upgrade
         </button>
-        <button onClick={toForm} className="btn btn-success">
+        <button onClick={toForm} className="btn border-black">
           I want create CV
         </button>
       </div>

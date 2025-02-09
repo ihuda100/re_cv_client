@@ -97,7 +97,7 @@ const Form2 = () => {
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button onClick={handleDownloadPdf}>Download</button>
+        <button className="btn  border-black" onClick={handleDownloadPdf}>Download</button>
       </div>
     </>
   );

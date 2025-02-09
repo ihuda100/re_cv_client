@@ -138,7 +138,7 @@ function SignUpClient() {
             </div>
 
             <div className="m-2 text-center">
-              <button className="btn btn-primary btn-lg w-75">Sign Up</button>
+              <button className="btn border-black btn-lg w-75">Sign Up</button>
             </div>
           </form>
 

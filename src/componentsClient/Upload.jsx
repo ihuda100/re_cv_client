@@ -51,7 +51,7 @@ const Upload = () => {
         type="file"
       />
       <br />
-      <button onClick={sendFile} className="mt-2 btn btn-dark">
+      <button onClick={sendFile} className="mt-2 btn border-black">
         upload
       </button>
       <br />

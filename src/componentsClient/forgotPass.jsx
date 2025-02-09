@@ -74,7 +74,7 @@ function ForgotPass() {
               <input value={confirmPassword} onChange={handleConfirmPasswordChange} type="password" className="form-control" required />
               {errors.confirmPassword && <small className="text-danger">{errors.confirmPassword}</small>}
             </div>
-            <button type="submit" className="btn btn-primary w-100">Continue</button>
+            <button type="submit" className="btn border-black w-100">Continue</button>
           </form>
         </div>
       </div>

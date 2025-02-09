@@ -37,15 +37,13 @@ const Welcome = () => {
           </div>
           <button
             onClick={toSignIn}
-            className="btn m-3 w-50"
-            style={{ backgroundColor: "gold", color: "black", border: "none" }}
+            className="btn border-black m-3 w-50"
           >
             Sign In
           </button>
           <button
             onClick={toSignUp}
-            className="btn m-3 w-50"
-            style={{ backgroundColor: "gold", color: "black", border: "none" }}
+            className="btn border-black m-3 w-50"
           >
             Sign Up
           </button>
@@ -54,7 +52,7 @@ const Welcome = () => {
         <div className="px-4" style={{ height: "100%", width: "60%" }}>
           <div
             className="p-4 shadow-sm text-center"
-            style={{ width: "80%", borderRadius: "px", color: "gold"  }}
+            style={{ width: "80%", borderRadius: "px", color: "black" }}
           >
             <h3 className="py-2">About Us</h3>
             <p>

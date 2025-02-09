@@ -110,7 +110,7 @@ const VerifyFinal = () => {
       </form>
 
       <div style={{ padding: "20px" }}>
-        <button onClick={sendToPDF} className="btn btn-success">
+        <button onClick={sendToPDF} className="btn border-black">
           Verify your data
         </button>
       </div>

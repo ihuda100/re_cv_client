@@ -72,7 +72,7 @@ const loginClient = () => {
           </div>
 
           <div className='m-2 text-center'>
-            <button className="btn btn-primary btn-lg w-75">Sign In</button>
+            <button className="btn border-black btn-lg w-75">Sign In</button>
           </div>
 
         </form>
