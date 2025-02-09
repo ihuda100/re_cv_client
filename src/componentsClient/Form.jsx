@@ -55,22 +55,14 @@ const Form = () => {
           width: "50%",
         }}
       >
-        <label htmlFor="">Full Name:</label>
-        <input type="text" id="fullName" required />
-        <label htmlFor="">Phone:</label>
-        <input type="text" id="phone" required />
-        <label htmlFor="">Email:</label>
-        <input type="email" id="email" required />
-        <label htmlFor="">Linkdin:</label>
-        <input type="text" id="linkdin" />
-        <label htmlFor="">GitHub:</label>
-        <input type="text" id="gitHub" />
-        <label htmlFor="">Education:</label>
-        <textarea type="text" id="education" required />
-        <label htmlFor="">Work expirience:</label>
-        <textarea type="text" id="workExpirience" required />
-        <label htmlFor="">Tell me about you</label>
-        <textarea type="text" id="body" />
+        <input className="form-control" type="text" placeholder="Full Name" id="fullName" required />
+        <input className="form-control" type="text" placeholder="Phone" id="phone" required />
+        <input className="form-control" type="email" placeholder="Email"  id="email" required />
+        <input className="form-control" type="text" placeholder="Linkdin" id="linkdin" />
+        <input className="form-control" type="text" placeholder="GitHub" id="gitHub" />
+        <textarea className="form-control" type="text" placeholder="Education" id="education" required />
+        <textarea className="form-control" type="text" placeholder="Work expirience" id="workExpirience" required />
+        <textarea className="form-control" type="text" placeholder="Tell me about you" id="body" />
       </form>
       <div style={{ padding: "20px" }}>
         <button className="btn border-black" onClick={sendDataForUpgrade}>
