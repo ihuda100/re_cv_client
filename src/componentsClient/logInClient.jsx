@@ -108,7 +108,7 @@ const loginClient = () => {
             </div>
 
             <div className="m-2 text-center">
-              <button className="btn btn-primary btn-lg w-75">Sign In</button>
+              <button className="btn border-black btn-lg w-75">Sign In</button>
             </div>
           </form>
           <div className="m-2 text-center">
@@ -116,19 +116,6 @@ const loginClient = () => {
               Create account
             </p>
           </div>
-          <div className="m-2 flex-grow-1 text-start">
-            <input {...passwordRef} type="Password" className="form-control" placeholder="Password" style={{ fontSize: '1rem' }} />
-            {errors.password ? <small className='text-danger'>* Enter valid password, min 3 chars</small> : ""}
-            <p onClick={toforgatPass} className='mt-1 text-danger text-end'>Forgot password?</p>
-          </div>
-
-          <div className='m-2 text-center'>
-            <button className="btn border-black btn-lg w-75">Sign In</button>
-          </div>
-
-        </form>
-        <div className='m-2 text-center'>
-          <p onClick={toSignUp} className='text-info'>Create account</p>
         </div>
       </div>
     </div>
