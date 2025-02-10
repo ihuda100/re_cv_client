@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cv.css";
 import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Balancer from "react-wrap-balancer";
 import CVrender from "./CVrender";
 
-const Form2 = () => {
+const Form4 = () => {
   const location = useLocation();
   let { data } = location.state || {};
   console.log(data);
 
   //arr= obj to arr, map arr and destracture .
-
   let arr = data[0].body;
 
   //pdf download
@@ -48,19 +46,31 @@ const Form2 = () => {
     <>
       <div className="center">
         <div className="border border-3">
-          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
+          <div
+            ref={printRef}
+            className="d-flex flex-column"
+            style={{ height: "1131.44px", width: "800px" }}
+          >
             <div
+              className="mb-4"
               style={{
-                borderBottom: "5px solid green",
-                flexDirection: "column",
+                display: "flex",
+                background: "#F2F8FA",
+                height: "200px",
               }}
-              className="center"
             >
-              <h1>{data[0].fullName}</h1>
-            </div>
-            <div>
-              <h2 className="cvColor ms-2">Contact:</h2>
-
+              {/*Header */}
+              <div
+                className="ps-5"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "50%",
+                  justifyContent: "center",
+                }}
+              >
+                <h1>{data[0].fullName}</h1>
+              </div>
               <div className="d-flex flex-column justify-content-center ps-3">
                 <ul className="list-unstyled">
                   {data[0].phone && (
@@ -90,17 +100,23 @@ const Form2 = () => {
                 </ul>
               </div>
             </div>
+            {/* header end */}
             <div>
-              <CVrender data={arr} _color={"#77b254"} />
+              <CVrender data={arr} />
             </div>
+
+            <div style={{ flexGrow: 1 }}></div>
+            <div style={{ background: "#F2F8FA", height: "60px" }}></div>
           </div>
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button className="btn  border-black" onClick={handleDownloadPdf}>Download</button>
+        <button className="btn  border-black" onClick={handleDownloadPdf}>
+          Download
+        </button>
       </div>
     </>
   );
 };
 
-export default Form2;
+export default Form4;

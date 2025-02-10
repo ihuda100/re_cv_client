@@ -92,7 +92,7 @@ const Varification = () => {
 
           <div className="text-center mt-3">
             <button
-              className="btn btn-primary w-100"
+              className="btn border-black w-100"
               onClick={handleSubmit} disabled={!isCodeComplete}
             >Send</button>
           </div>

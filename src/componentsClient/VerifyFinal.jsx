@@ -34,87 +34,92 @@ const VerifyFinal = () => {
   return (
     <div style={{ height: "100vh" }}>
 
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div>
-        <h1>Details from your information</h1>
-      </div>
-
-      <form
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
-          textAlign: "center",
-          gap: "10px",
-          width: "50%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <label htmlFor=""> Full Name:</label>
-        <input
-          type="text"
-          name="fullName"
-          value={info?.fullName}
-          onChange={handleChange}
-        />
-        <label htmlFor="">Phone:</label>
-        <input
-          type="number"
-          name="phone"
-          value={info?.phone}
-          onChange={handleChange}
-        />
-        <label htmlFor="">Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={info?.email}
-          onChange={handleChange}
-        />
-        <label htmlFor="">Linkdin:</label>
-        <input
-          type="text"
-          name="linkdin"
-          value={info?.linkdin}
-          onChange={handleChange}
-        />
-        <label htmlFor="">GitHub:</label>
-        <input
-          type="text"
-          name="gitHub"
-          value={info?.gitHub}
-          onChange={handleChange}
-        />
-        {info?.body.map((item, i) => {
-          return (
-            <div key={i} style={{ gap: "10px" }}>
-              <label htmlFor="">{item?.key}</label>
-              {/* <br /> */}
-              <textarea
-                className="w-100"
-                rows={3}
-                type="text"
-                name="body"
-                index={i}
-                value={item?.value}
-                onChange={(e) => handleChange(e, i)}
-              />
-            </div>
-          );
-        })}
-      </form>
+        <div>
+          <h1>Details from your information</h1>
+        </div>
 
-      <div style={{ padding: "20px" }}>
-        <button onClick={sendToPDF} className="btn btn-success">
-          Verify your data
-        </button>
+        <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+            gap: "10px",
+            width: "50%",
+          }}
+        >
+          <input
+            className="form-control"
+            placeholder="Full Name"
+            type="text"
+            name="fullName"
+            value={info?.fullName}
+            onChange={handleChange}
+          />
+          <input
+            className="form-control"
+            placeholder="Phone"
+            type="number"
+            name="phone"
+            value={info?.phone}
+            onChange={handleChange}
+          />
+          <input
+            className="form-control"
+            placeholder="Email"
+            type="email"
+            name="email"
+            value={info?.email}
+            onChange={handleChange}
+          />
+          <input
+            className="form-control"
+            placeholder="Linkdin"
+            type="text"
+            name="linkdin"
+            value={info?.linkdin}
+            onChange={handleChange}
+          />
+          <input
+            className="form-control"
+            placeholder="GitHub"
+            type="text"
+            name="gitHub"
+            value={info?.gitHub}
+            onChange={handleChange}
+          />
+          {info?.body.map((item, i) => {
+            return (
+              <div key={i} style={{ gap: "10px" }}>
+                <label htmlFor="">{item?.key}</label>
+                {/* <br /> */}
+                <textarea
+                  className="w-100 form-control"
+                  rows={3}
+                  type="text"
+                  name="body"
+                  index={i}
+                  value={item?.value}
+                  onChange={(e) => handleChange(e, i)}
+                />
+              </div>
+            );
+          })}
+        </form>
+
+        <div className="pt-2">
+          <button onClick={sendToPDF} className="btn border-black">
+            Verify your data
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

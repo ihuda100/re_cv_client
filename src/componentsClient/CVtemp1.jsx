@@ -111,7 +111,7 @@ const Form1 = () => {
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button className="btn btn-dark " onClick={handleDownloadPdf}>
+        <button className="btn  border-black" onClick={handleDownloadPdf}>
           Download
         </button>
       </div>

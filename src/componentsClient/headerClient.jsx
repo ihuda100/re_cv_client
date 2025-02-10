@@ -9,9 +9,7 @@ function HeaderClient() {
   const IfShowNav = useSelector((state) => state.myDetailsSlice.ifShowNav);
   const IsAdmin = useSelector((state) => state.myDetailsSlice.isAdmin);
 
-  const onWelcomeClick = () => {
-    nav("/");
-  };
+
   const onHomeClick = () => {
     nav("/homeClient");
   };
@@ -30,78 +28,67 @@ function HeaderClient() {
   };
 
   return (
-    IfShowNav ? 
-    
-    <div className="p-2 container " style={{ width: "40em" }}>
-
-      <div className="d-flex justify-content-around ">
-        {IfShowNav ? (
-          " "
-        ) : (
-          <button
-            className="btn border-black "
-            style={{ backgroundColor: "gold", color: "black" }}
-            onClick={onWelcomeClick}
-          >
-            Welcome
-          </button>
-        )}
-        {IfShowNav ? (
-          <button
-            className="btn border-black "
-            style={{ backgroundColor: "gold", color: "black" }}
-            onClick={onHomeClick}
-          >
-            Home
-          </button>
-        ) : (
-          ""
-        )}
-        <button
-          className="btn border-black"
-          style={{ backgroundColor: "gold", color: "black" }}
-          onClick={onHelpClick}
+    IfShowNav ?
+      <div
+        className="nav-container p-2 "
+        style={{
+          width: "100%",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+          borderRadius: "8px",
+          backgroundColor: "white", // Ensure visibility
+        }}
+      >
+        <div
+          className="d-flex justify-content-between align-items-center"
+          style={{ height: "70px" }}
         >
-          help
-        </button>
+          {/* <div className="d-flex justify-content-around "> */}
 
-        {IfShowNav ? (
+
+
+          <img
+            src="src/assets/react.svg"
+            alt="logo"
+            onClick={onHomeClick}
+          />
+
+
           <button
             className="btn border-black"
-            style={{ backgroundColor: "gold", color: "black" }}
-            onClick={onlogout}
+            onClick={onHelpClick}
           >
-            logout
+            help
           </button>
-        ) : (
-          ""
-        )}
 
-        {IfShowNav ? (
           <button
             className="btn border-black"
-            style={{ backgroundColor: "gold", color: "black" }}
             onClick={onHistory}
           >
             History
           </button>
-        ) : (
-          ""
-        )}
 
-        {IfShowNav && IsAdmin ? (
+
+          {IsAdmin ? (
+            <button
+              className="btn border-black"
+              onClick={onAdminClick}
+            >
+              Admin
+            </button>
+          ) : (
+            ""
+          )}
+
           <button
-            className="btn border-black"
-            style={{ backgroundColor: "gold", color: "black" }}
-            onClick={onAdminClick}
+          style={{color:"red"}}
+            className="btn border-danger"
+            onClick={onlogout}
           >
-            Admin
+            logout
           </button>
-        ) : (
-          ""
-        )}
-      </div>
-    </div>:""
+        </div>
+        {/* </div> */}
+      </div> : ""
   );
 }
 

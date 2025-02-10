@@ -64,7 +64,7 @@ function Submit() {
             {emailError && <small className="text-danger">{emailError}</small>}
           </div>
           <button
-            className="btn btn-primary btn-block"
+            className="btn border-black btn-block"
             style={{ height: '50px', fontSize: '1rem' }}
             onClick={handleSubmit}
           >

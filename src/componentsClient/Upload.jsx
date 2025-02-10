@@ -46,13 +46,12 @@ const Upload = () => {
         <h1 className="mb-3">Upload your CV file</h1>
         <input
           onChange={handleFileChange}
-          // className="w-25"
           class="form-control form-control-lg w-25 m-auto"
           id="formFileLg"
           type="file"
         />
         <br />
-        <button onClick={sendFile} className="mt-2 btn btn-dark">
+        <button onClick={sendFile} className="mt-2 btn border-black">
           upload
         </button>
         <br />
