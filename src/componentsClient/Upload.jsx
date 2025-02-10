@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../services/apiService";
-import gif from '../assets/gif-loading.webp'
+import gif from "../assets/gif-loading.webp";
 
 const Upload = () => {
   const [file, setFile] = useState(null);
@@ -21,19 +21,19 @@ const Upload = () => {
       setLoading(false);
       return;
     }
-    // צריך סינון של קיבצי PDF בלבד 
+    // צריך סינון של קיבצי PDF בלבד
     const formData = new FormData();
     formData.append("file", file);
     try {
-      let url = API_URL + "/resumes/convert"
+      let url = API_URL + "/resumes/convert";
       const response = await axios.post(url, formData, {
         headers: {
-          'x-api-key': localStorage["start_react_token"],
+          "x-api-key": localStorage["start_react_token"],
           "Content-Type": "multipart/form-data",
         },
       });
       console.log("הקובץ הועלה בהצלחה:", response.data);
-      nav('/verify',{ state: { data: response.data } })
+      nav("/verify", { state: { data: response.data } });
     } catch (error) {
       setLoading(false);
       console.error("שגיאה בהעלאת הקובץ:", error);
@@ -42,21 +42,22 @@ const Upload = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-
-    <div className="mt-5 text-center">
-      <h1 className="mb-3">Upload your CV file</h1>
-      <input
-        onChange={handleFileChange}
-        className="border rounded-1"
-        type="file"
-      />
-      <br />
-      <button onClick={sendFile} className="mt-2 btn btn-dark">
-        upload
-      </button>
-      <br />
-      {loading && (<img src={gif} alt="loading" width={50}/>)}
-    </div>
+      <div className="mt-5 text-center">
+        <h1 className="mb-3">Upload your CV file</h1>
+        <input
+          onChange={handleFileChange}
+          // className="w-25"
+          class="form-control form-control-lg w-25 m-auto"
+          id="formFileLg"
+          type="file"
+        />
+        <br />
+        <button onClick={sendFile} className="mt-2 btn btn-dark">
+          upload
+        </button>
+        <br />
+        {loading && <img src={gif} alt="loading" width={50} />}
+      </div>
     </div>
   );
 };

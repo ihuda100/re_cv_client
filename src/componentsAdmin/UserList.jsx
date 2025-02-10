@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { API_URL, doApiGet } from "../services/apiService";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import gif from "../assets/gif-loading.webp";
 
 function UserList() {
@@ -11,16 +11,17 @@ function UserList() {
   const ThisID = useSelector((state) => state.myDetailsSlice.idMorInfoAdmin);
   const [thisUser, setThisUser] = useState([]);
   const nav = useNavigate();
-
+  const location = useLocation();
+  let { id } = location.state || {};
+  // console.log(id);
   useEffect(() => {
     doApi();
   }, []);
 
   const doApi = async () => {
-    let url = API_URL + "/users/single/" + ThisID;
+    let url = API_URL + "/users/single/" + id;
     try {
       let data = await doApiGet(url);
-      // console.log(data.data);
       setThisUser(data.data);
       doApiAllResumes();
       setLoading(false);
@@ -31,14 +32,13 @@ function UserList() {
   };
 
   const doApiAllResumes = async () => {
-    let url = API_URL + "/resumes/userlist/" + ThisID;
+    let url = API_URL + "/resumes/userlist/" + id;
     try {
       let data = await doApiGet(url);
       console.log(data.data);
       setAr(data.data);
     } catch (error) {
       console.log(error.response.data.error);
-      // alert(error.response.data.error);
       setError(error.response.data.error);
     }
   };

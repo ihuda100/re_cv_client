@@ -30,6 +30,8 @@ function HeaderClient() {
   };
 
   return (
+    IfShowNav ? 
+    
     <div className="p-2 container " style={{ width: "40em" }}>
 
       <div className="d-flex justify-content-around ">
@@ -99,7 +101,7 @@ function HeaderClient() {
           ""
         )}
       </div>
-    </div>
+    </div>:""
   );
 }
 
