@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import gif from "../assets/gif-loading.webp";
 
 function History() {
-
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [ar, setAr] = useState([]);
   const nav = useNavigate();
@@ -12,8 +12,6 @@ function History() {
   useEffect(() => {
     doApiAllResumes();
   }, []);
-
-
 
   const doApiAllResumes = async () => {
     let url = API_URL + "/resumes/history";
@@ -24,14 +22,14 @@ function History() {
       setAr(data.data);
     } catch (error) {
       console.log(error);
-      setLoading(false)
+      setLoading(false);
+      setError(error.response.data.error);
     }
   };
 
   const toPreviwe = (id) => {
-    console.log(id)
+    console.log(id);
     nav("/template", { state: { data: id } });
-    
   };
 
   return (
@@ -40,7 +38,7 @@ function History() {
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
         </div>
-      ) : (
+      ) : error ? (<h1 className="pt-4 text-center text-danger">{error}</h1>) : (
         <>
           <div className="container">
             <div style={{ textAlign: "center", justifyContent: "center" }}>

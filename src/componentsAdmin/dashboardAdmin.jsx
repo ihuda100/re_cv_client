@@ -74,7 +74,7 @@ const DashboardAdmin = () => {
   const toAdmin2 = async (id) => {
     console.log("id:", id);
     dispatch(addIdMorInfoAdmin({ idMorInfoAdmin: id }));
-    nav("/admin/userlist");
+    nav("/admin/userlist", { state: { id } });
   };
 
   // const goToInfonmationUser = (idUser) =>{

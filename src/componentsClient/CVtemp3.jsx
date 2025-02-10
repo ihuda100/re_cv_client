@@ -47,15 +47,19 @@ const Form3 = () => {
     <>
       <div className="center">
         <div className="border border-3">
-          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
+          <div
+            ref={printRef}
+            className="d-flex flex-column"
+            style={{ height: "1131.44px", width: "800px" }}
+          >
             <div
               style={{ background: "#C4D9FF", padding: "10px", width: "100%" }}
               className="center"
             >
               <h1>{data[0].fullName}</h1>
             </div>
-            <div className="flex12">
-              <div style={{ background: "#C4D9FF" }} className="w-25">
+            <div className="flex12 h-100">
+              <div style={{ background: "#C4D9FF"}} className="w-25">
                 <h3 className="ms-2">contact me:</h3>
                 <div className="d-flex flex-column justify-content-center ps-3">
                   <ul className="list-unstyled">
