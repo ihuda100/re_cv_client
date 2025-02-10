@@ -58,7 +58,7 @@ const Form2 = () => {
             >
               <h1>{data[0].fullName}</h1>
             </div>
-            <div>
+            <div className="m-3">
               <h2 className="cvColor ms-2">Contact:</h2>
 
               <div className="d-flex flex-column justify-content-center ps-3">
@@ -97,7 +97,9 @@ const Form2 = () => {
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button className="btn  border-black" onClick={handleDownloadPdf}>Download</button>
+        <button className="btn  border-black" onClick={handleDownloadPdf}>
+          Download
+        </button>
       </div>
     </>
   );

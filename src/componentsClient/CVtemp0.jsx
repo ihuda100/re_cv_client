@@ -55,7 +55,8 @@ const Form4 = () => {
               className="mb-4"
               style={{
                 display: "flex",
-                background: "#F2F8FA",
+                background: "#23486A",
+                color: "#FBFBFB",
                 height: "200px",
               }}
             >

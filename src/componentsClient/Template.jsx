@@ -4,7 +4,7 @@ import "./cv.css";
 import cv1 from "../assets/cvImages/cv1.jpg";
 import cv2 from "../assets/cvImages/cv2.jpg";
 import cv3 from "../assets/cvImages/cv3.jpg";
-import cv4 from "../assets/cvImages/cv4.jpg";
+import cv0 from "../assets/cvImages/cv0.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import CV from "./CV";
 import { doApiMethod, API_URL } from "../services/apiService";
@@ -13,7 +13,7 @@ const Template = () => {
   const nav = useNavigate();
   const location = useLocation();
   const [verify, setVerify] = useState(true);
-  const [imgs, setImgs] = useState([cv1, cv2, cv3, cv4]);
+  const [imgs, setImgs] = useState([cv0, cv1, cv2, cv3]);
   const [startIndex, setStartIndex] = useState(0); // מצביע על התמונה הראשונה מתוך ה-3 שיופיעו
 
   let { data } = location.state || {};
@@ -23,7 +23,10 @@ const Template = () => {
     try {
       const url = API_URL + "/resumes/getinfo";
       const res = await doApiMethod(url, "POST", data);
-      nav(`/cvtemp${i + 1}`, { state: { data: [res.data] } });
+      //const actualIndex = (startIndex + i) % imgs.length;
+      nav(`/cvtemp${(startIndex + i) % imgs.length}`, {
+        state: { data: [res.data] },
+      });
     } catch (error) {
       if (error.response.data.message === "Please verify you resumes") {
         setVerify(false);
@@ -42,7 +45,13 @@ const Template = () => {
 
   const imageGen = () =>
     getDisplayedImages().map((el, i) => (
-      <CV height={"500px"} width={"400px"} src={el} onClick={() => openImg(i)} key={i} />
+      <CV
+        height={"500px"}
+        width={"400px"}
+        src={el}
+        onClick={() => openImg(i)}
+        key={i}
+      />
     ));
 
   // מעבר ימינה – מגדיל את האינדקס כך שהתמונות יזוזו קדימה
@@ -75,7 +84,11 @@ const Template = () => {
           </button>
         </div>
       </div>
-      {!verify && <h1 className="text-danger text-center p-3">Please verify your resumes</h1>}
+      {!verify && (
+        <h1 className="text-danger text-center p-3">
+          Please verify your resumes
+        </h1>
+      )}
     </>
   );
 };

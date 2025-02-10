@@ -10,14 +10,11 @@ const CV = ({ width, height, src, onClick }) => {
     highLight ? SetHighLight(false) : SetHighLight(true);
   };
 
-  
-
   return (
     <div
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       className={highLight ? "borderHighLight" : "borderDef"}
-      
     >
       <img onClick={onClick} width={width} height={height} src={src} alt="" />
     </div>

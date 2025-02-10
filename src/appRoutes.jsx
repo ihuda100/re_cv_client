@@ -25,7 +25,7 @@ import CVtemp2 from "./componentsClient/CVtemp2";
 import CVtemp3 from "./componentsClient/CVtemp3";
 import History from "./componentsClient/History";
 import UserList from "./componentsAdmin/UserList";
-
+import CVtemp0 from "./componentsClient/CVtemp0";
 
 function AppRoutes() {
   return (
@@ -34,7 +34,7 @@ function AppRoutes() {
         <Route path="/admin" element={<LayoutAdmin />}>
           <Route index element={<DashboardAdmin />} />
           <Route path="/admin/userlist" element={<UserList />} />
-          <Route path="/admin/previwe" element={<Previwe/>}/>
+          <Route path="/admin/previwe" element={<Previwe />} />
         </Route>
 
         <Route path="/" element={<LayoutClient />}>
@@ -60,6 +60,7 @@ function AppRoutes() {
           <Route path="/cvtemp1" element={<CVtemp1 />} />
           <Route path="/cvtemp2" element={<CVtemp2 />} />
           <Route path="/cvtemp3" element={<CVtemp3 />} />
+          <Route path="/cvtemp0" element={<CVtemp0 />} />
         </Route>
       </Routes>
     </BrowserRouter>

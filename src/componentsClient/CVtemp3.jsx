@@ -59,18 +59,18 @@ const Form3 = () => {
               <h1>{data[0].fullName}</h1>
             </div>
             <div className="flex12 h-100">
-              <div style={{ background: "#C4D9FF"}} className="w-25">
-                <h3 className="ms-2">contact me:</h3>
+              <div style={{ background: "#C4D9FF" }} className="w-25">
+                <h3 className="ms-3">contact me:</h3>
                 <div className="d-flex flex-column justify-content-center ps-3">
                   <ul className="list-unstyled">
                     {data[0].phone && (
-                      <div className="d-flex">
+                      <div className="d-flex ms-2">
                         <i className="bi bi-telephone-fill"></i>
                         <li className="ms-2">{data[0].phone}</li>
                       </div>
                     )}
                     {data[0].email && (
-                      <div className="d-flex">
+                      <div className="d-flex ms-2">
                         <i className="bi bi-envelope-at-fill"></i>
                         <li className="ms-2">{data[0].email}</li>
                       </div>
@@ -91,7 +91,7 @@ const Form3 = () => {
                 </div>
               </div>
               <div>
-                <div>
+                <div className="my-3">
                   <CVrender data={arr} />
                 </div>
               </div>
@@ -100,7 +100,9 @@ const Form3 = () => {
         </div>
       </div>
       <div className="center" style={{ margin: "5px" }}>
-        <button className="btn  border-black" onClick={handleDownloadPdf}>Download</button>
+        <button className="btn  border-black" onClick={handleDownloadPdf}>
+          Download
+        </button>
       </div>
     </>
   );
