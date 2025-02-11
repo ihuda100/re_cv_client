@@ -68,19 +68,14 @@ const Template = () => {
     <>
       <div className="center">
         <h1 className="my-4">Choose your desired resume template</h1>
-        {/* <h1 className="my-4">
-          <em>
-            <u>Choose the perfect resume template</u>
-          </em>
-        </h1> */}
       </div>
       <div className="center">
         <div className="buttons-container">
-          <button onClick={toTheLeft} className="nav-button">
+          <button onClick={toTheLeft} className="nav-button p-4 opacity-50">
             <FaArrowLeft />
           </button>
           <div className="images-container">{imageGen()}</div>
-          <button onClick={toTheRight} className="nav-button">
+          <button onClick={toTheRight} className="nav-button p-4 opacity-50">
             <FaArrowRight />
           </button>
         </div>

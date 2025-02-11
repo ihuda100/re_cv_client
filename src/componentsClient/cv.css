@@ -24,11 +24,11 @@
   gap: 30px;
 }
 
-.flex12 {
+/* .flex12 {
   display: flex;
-  gap: 30px;
+  padding-left: 30px;
   justify-content: space-evenly;
-}
+} */
 
 .cvColor {
   color: #77b254;
@@ -60,4 +60,20 @@
 .images-container {
   display: flex;
   gap: 30px;
+}
+.borderDef {
+  border: 2px solid #ddd; /* מסגרת אפורה דקה */
+  border-radius: 15px; /* פינות מעוגלות */
+  transition: all 0.3s ease-in-out; /* אנימציה חלקה */
+}
+
+.borderHighLight {
+  border: 2px solid #007bff; /* מסגרת מודגשת בכחול */
+  border-radius: 15px; /* לשמור על הפינות המעוגלות */
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2); /* אפקט קליל של צל */
+  transition: all 0.3s ease-in-out;
+}
+
+.borderDef img, .borderHighLight img  {
+  border-radius: 15px; /* לוודא שהתמונה גם מעוגלת */
 }

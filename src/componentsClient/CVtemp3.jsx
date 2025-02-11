@@ -52,37 +52,41 @@ const Form3 = () => {
             className="d-flex flex-column"
             style={{ height: "1131.44px", width: "800px" }}
           >
+            <div style={{ height: "70px" }}></div>
             <div
-              style={{ background: "#C4D9FF", padding: "10px", width: "100%" }}
-              className="center"
+              style={{ background: "#D7DDE7", padding: "10px", width: "100%" }}
+              className="center py-5"
             >
               <h1>{data[0].fullName}</h1>
             </div>
-            <div className="flex12 h-100">
-              <div style={{ background: "#C4D9FF" }} className="w-25">
+            <div className="d-flex h-100">
+              <div
+                style={{ background: "#E9EAED", width: "30%" }}
+                className="ms-5 align-content-center"
+              >
                 <h3 className="ms-3">contact me:</h3>
                 <div className="d-flex flex-column justify-content-center ps-3">
                   <ul className="list-unstyled">
                     {data[0].phone && (
-                      <div className="d-flex ms-2">
+                      <div className="d-flex ms-2 mt-2">
                         <i className="bi bi-telephone-fill"></i>
                         <li className="ms-2">{data[0].phone}</li>
                       </div>
                     )}
                     {data[0].email && (
-                      <div className="d-flex ms-2">
+                      <div className="d-flex ms-2 mt-2">
                         <i className="bi bi-envelope-at-fill"></i>
                         <li className="ms-2">{data[0].email}</li>
                       </div>
                     )}
                     {data[0].github && (
-                      <div className="d-flex">
+                      <div className="d-flex ms-2 mt-2">
                         <i className="bi bi-github"></i>
                         <li className="ms-2">{data[0].github}</li>
                       </div>
                     )}
                     {data[0].linkdin && (
-                      <div className="d-flex">
+                      <div className="d-flex ms-2 mt-2">
                         <i className="bi bi-linkedin"></i>
                         <li className="ms-2">{data[0].linkdin}</li>
                       </div>
@@ -90,10 +94,8 @@ const Form3 = () => {
                   </ul>
                 </div>
               </div>
-              <div>
-                <div className="my-3">
-                  <CVrender data={arr} />
-                </div>
+              <div className="mt-5">
+                <CVrender data={arr} />
               </div>
             </div>
           </div>
