@@ -38,14 +38,14 @@ function History() {
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
         </div>
-      ) : error ? (<h1 className="pt-4 text-center text-danger">{error}</h1>) : (
+      ) : error ? (<h1 className="text-center text-danger">{error}</h1>) : (
         <>
           <div className="container">
             <div style={{ textAlign: "center", justifyContent: "center" }}>
-              <h1>Youre resumes</h1>
+              <h1 className="my-4">My resumes</h1>
             </div>
             <div>
-              <table className="w-50 m-auto table table-striped shadow-lg">
+              <table className="w-75 m-auto table table-striped shadow-lg">
                 <thead>
                   <tr>
                     <th>List</th>

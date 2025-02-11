@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addIfShowNav } from "../featuers/myDetailsSlice";
-import bgImage from "../assets/images.png";
+// import bgImage from "../assets/images.png";
 
 const Welcome = () => {
   let nav = useNavigate();

@@ -61,15 +61,20 @@ function SignUpClient() {
   };
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100vh" }} className="align-content-center">
       <div
-        className=" container mt-5 shadow-lg p-4 d-flex flex-column text-center"
+        className="py-5 container shadow-lg p-4 d-flex flex-column text-center rounded rounded-4"
         style={{ width: "80%", maxWidth: "500px", backgroundColor: "white" }}
       >
         <div className="row justify-content-center">
           {/* <img src="" alt="" /> */}
+          <img
+            className="mb-4"
+            style={{ height: "20%", width: "20%", borderRadius: "50px" }}
+            src="src/assets/react.svg"
+            alt="logo"
+          />
           <h3 className="m-2">Create Account</h3>
-
           <form onSubmit={handleSubmit(onSubForm)} className="text-center">
             <div className="m-2 flex-grow-1 text-start">
               <input

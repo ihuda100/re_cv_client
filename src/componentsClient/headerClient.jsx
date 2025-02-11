@@ -33,13 +33,13 @@ function HeaderClient() {
         className="nav-container p-2 "
         style={{
           width: "100%",
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+          // boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
           borderRadius: "8px",
           backgroundColor: "white", // Ensure visibility
         }}
       >
         <div
-          className="d-flex justify-content-between align-items-center"
+          className="d-flex justify-content-around align-items-center"
           style={{ height: "70px" }}
         >
           {/* <div className="d-flex justify-content-around "> */}

@@ -55,12 +55,18 @@ const loginClient = () => {
   };
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100vh" }} className="align-content-center">
       <div
-        className=" container mt-5 shadow-lg p-4 d-flex flex-column text-center"
+        className="py-5 container shadow-lg p-4 d-flex flex-column text-center rounded rounded-4"
         style={{ width: "80%", maxWidth: "500px", backgroundColor: "white" }}
       >
         <div className="row justify-content-center">
+          <img
+            className="mb-4"
+            style={{ height: "20%", width: "20%", borderRadius: "50px" }}
+            src="src/assets/react.svg"
+            alt="logo"
+          />
           {/* <img src="" alt="" /> */}
           <h3 className="m-2">Sign in</h3>
 

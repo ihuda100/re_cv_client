@@ -67,7 +67,7 @@ const Template = () => {
   return (
     <>
       <div className="center">
-        <h1 className="my-4">"Choose the perfect resume template and take the next step in your career! 🚀</h1>
+        <h1 className="my-4">Choose your desired resume template</h1>
         {/* <h1 className="my-4">
           <em>
             <u>Choose the perfect resume template</u>
