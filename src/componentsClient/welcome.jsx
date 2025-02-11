@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addIfShowNav } from "../featuers/myDetailsSlice";
+import bgImage from "../assets/images.png";
 
 const Welcome = () => {
   let nav = useNavigate();
@@ -60,14 +61,19 @@ const Welcome = () => {
           </div>
         </div>
       </div>
-      <div className="w-50 px-5 align-content-center justify-content-center text-center">
-        <h1>🚀 Create Your Professional Resume in 3 Easy Steps!</h1>
-        <ol>
-          <li>✅ Step 1: Upload Your Existing Resume or Start Fresh</li>
-          <li>✍️ Step 2: Customize & Enhance with AI-Powered Suggestions</li>
-          <li>📄 Step 3: Choose a Template & Download Your Perfect Resume</li>
-        </ol>
-        <p>Start now and stand out in your job search! 🔥</p>
+      <div
+        className="w-50 px-5 align-content-center justify-content-center text-center"
+        // style={{background: `url(${bgImage}) no-repeat center center / cover`}}
+      >
+        <div className="p-4 shadow rounded rounded-4 h-75 align-content-center ">
+          <h1>🚀 Create Your Professional Resume in 3 Easy Steps!</h1>
+          <ol className="custom-list">
+            <li>✅ Step 1: Upload Your Existing Resume or Start Fresh</li>
+            <li>✍️ Step 2: Customize & Enhance with AI-Powered Suggestions</li>
+            <li>📄 Step 3: Choose a Template & Download Your Perfect Resume</li>
+          </ol>
+          <p>Start now and stand out in your job search! 🔥</p>
+        </div>
       </div>
       {/* <div
         className="d-flex justify-content-around p-5 m-3"
