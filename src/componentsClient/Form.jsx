@@ -42,7 +42,7 @@ const Form = () => {
       }}
     >
       <div>
-        <h1>Please tell me about you</h1>
+        <h1 className="py-4">Complete Your Details to Build Your Perfect Resume ✍️</h1>
       </div>
 
       <form

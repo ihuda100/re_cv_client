@@ -43,7 +43,7 @@ const VerifyFinal = () => {
         }}
       >
         <div>
-          <h1>Details from your information</h1>
+          <h1 className="my-4">Review & Confirm Your Enhanced Resume ✅</h1>
         </div>
 
         <form

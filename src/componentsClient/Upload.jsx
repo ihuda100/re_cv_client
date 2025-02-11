@@ -42,8 +42,8 @@ const Upload = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-      <div className="mt-5 text-center">
-        <h1 className="mb-3">Upload your CV file</h1>
+      <div className="text-center">
+        <h1 className="my-4">Upload Your Resume to Get Started 📤</h1>
         <input
           onChange={handleFileChange}
           class="form-control form-control-lg w-25 m-auto"
@@ -51,7 +51,7 @@ const Upload = () => {
           type="file"
         />
         <br />
-        <button onClick={sendFile} className="mt-2 btn border-black">
+        <button onClick={sendFile} className="btn border-black">
           upload
         </button>
         <br />
