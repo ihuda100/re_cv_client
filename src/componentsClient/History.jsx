@@ -45,9 +45,10 @@ function History() {
               <h1 className="my-4">My resumes</h1>
             </div>
             <div>
-              <table className="w-75 m-auto table table-striped shadow-lg">
+              <table className="w-75 m-auto table table-striped table-hover shadow-lg">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Titel</th>
                     <th>Date</th>
                     <th>Previwe</th>
@@ -56,19 +57,20 @@ function History() {
                 <tbody>
                   {ar.map((resume, index) => {
                     return (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>
+                      <tr key={index} className="align-middle table-row" onClick={() => toPreviwe(resume._id)}>
+                        <td className="fw-semibold">{index + 1}</td>
+                        <td>{resume?.type}</td>
+                        <td className="text-muted">
                           {resume.dateCreated
                             ? resume.dateCreated.substring(10, length - 1)
                             : ""}
                         </td>
                         <td>
                           <button
-                            className="btn btn-sm"
+                            className="btn btn-outline-dark"
                             onClick={() => toPreviwe(resume._id)}
                           >
-                            <i className="bi bi-arrow-right-circle-fill"></i>
+                            <i class="bi bi-arrow-right-short"></i>
                           </button>
                         </td>
                       </tr>
