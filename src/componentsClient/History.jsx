@@ -48,7 +48,7 @@ function History() {
               <table className="w-75 m-auto table table-striped shadow-lg">
                 <thead>
                   <tr>
-                    <th>List</th>
+                    <th>Titel</th>
                     <th>Date</th>
                     <th>Previwe</th>
                   </tr>
