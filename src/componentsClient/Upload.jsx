@@ -36,6 +36,11 @@ const Upload = () => {
       nav("/verify", { state: { data: response.data } });
     } catch (error) {
       setLoading(false);
+      if (error.message == "Network Error") {
+        alert(error.message);
+      } else {
+        alert(error.response.data.message)
+      }
       console.error("שגיאה בהעלאת הקובץ:", error);
     }
   };
