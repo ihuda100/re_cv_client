@@ -4,10 +4,12 @@ import { useLocation } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import CVrender from "./CVrender";
+import { API_URL, doApiMethod } from "../services/apiService";
 
 const Form4 = () => {
   const location = useLocation();
   let { data } = location.state || {};
+  let { index } = location.state || {};
   console.log(data);
 
   //arr= obj to arr, map arr and destracture .
@@ -17,29 +19,37 @@ const Form4 = () => {
   const printRef = React.useRef(null);
 
   const handleDownloadPdf = async () => {
+    await doApi();
     const element = printRef.current;
     if (!element) {
       return;
     }
-
     const canvas = await html2canvas(element, {
       scale: 2,
     });
     const data = canvas.toDataURL("image/png");
-
     const pdf = new jsPDF({
       orientation: "portrait",
       unit: "px",
       format: "a4",
     });
-
     const imgProperties = pdf.getImageProperties(data);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-
     pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("examplepdf.pdf");
+  };
+
+  const doApi = async () => {
+    let template = { template: index };
+    console.log(template);
+    let url = API_URL + "/users/template";
+    try {
+      let resp = await doApiMethod(url, "PATCH", template);
+      console.log(resp.data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

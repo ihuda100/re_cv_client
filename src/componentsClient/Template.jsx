@@ -25,7 +25,7 @@ const Template = () => {
       const res = await doApiMethod(url, "POST", data);
       //const actualIndex = (startIndex + i) % imgs.length;
       nav(`/cvtemp${(startIndex + i) % imgs.length}`, {
-        state: { data: [res.data] },
+        state: { data: [res.data] , index: (startIndex + i) % imgs.length },
       });
     } catch (error) {
       if (error.response.data.message === "Please verify you resumes") {
