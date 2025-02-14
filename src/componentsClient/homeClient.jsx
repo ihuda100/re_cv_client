@@ -80,8 +80,8 @@ const HomeClient = () => {
           onClick={toForm}
           className="btn border-black"
           style={{
-            background: hover ? "#0A5EB0" : "",
-            color: hover ? "white" : "",
+            background: hover2 ? "#0A5EB0" : "",
+            color: hover2 ? "white" : "",
           }}
         >
           I want create CV

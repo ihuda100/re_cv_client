@@ -33,44 +33,102 @@ const Form = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div>
-        <h1 className="py-4">Complete Your Details to Build Your Perfect Resume ✍️</h1>
+    <>
+      <div className="container  d-flex justify-content-center align-items-center mt-5">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            className: "col-6",
+          }}
+        >
+          <div>
+            <h1 className="py-4 " style={{ textAlign: "center" }}>
+              Complete Your Details to Build Your Perfect Resume ✍️
+            </h1>
+          </div>
+          <form
+            action=""
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              textAlign: "center",
+              gap: "10px",
+              width: "50%",
+            }}
+          >
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Full Name"
+              id="fullName"
+              required
+            />
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Phone"
+              id="phone"
+              required
+            />
+            <input
+              className="form-control"
+              type="email"
+              placeholder="Email"
+              id="email"
+              required
+            />
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Linkdin"
+              id="linkdin"
+            />
+            <input
+              className="form-control"
+              type="text"
+              placeholder="GitHub"
+              id="gitHub"
+            />
+            <textarea
+              className="form-control"
+              type="text"
+              placeholder="Education"
+              id="education"
+              required
+            />
+            <textarea
+              className="form-control"
+              type="text"
+              placeholder="Work expirience"
+              id="workExpirience"
+              required
+            />
+            <textarea
+              className="form-control"
+              type="text"
+              placeholder="Tell me about you"
+              id="body"
+            />
+          </form>
+          <div style={{ padding: "20px" }}>
+            <button className="btn border-black" onClick={sendDataForUpgrade}>
+              Submit
+            </button>
+          </div>
+          <div>{loading && <img src={gif} alt="loading" width={50} />}</div>
+        </div>
+        <div className="col-6">
+          <h1>Help:</h1>
+          <p>
+            Enter your full name phone number and email into the corrosponding
+            fields
+          </p>
+        </div>
       </div>
-
-      <form
-        action=""
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-          gap: "10px",
-          width: "50%",
-        }}
-      >
-        <input className="form-control" type="text" placeholder="Full Name" id="fullName" required />
-        <input className="form-control" type="text" placeholder="Phone" id="phone" required />
-        <input className="form-control" type="email" placeholder="Email"  id="email" required />
-        <input className="form-control" type="text" placeholder="Linkdin" id="linkdin" />
-        <input className="form-control" type="text" placeholder="GitHub" id="gitHub" />
-        <textarea className="form-control" type="text" placeholder="Education" id="education" required />
-        <textarea className="form-control" type="text" placeholder="Work expirience" id="workExpirience" required />
-        <textarea className="form-control" type="text" placeholder="Tell me about you" id="body" />
-      </form>
-      <div style={{ padding: "20px" }}>
-        <button className="btn border-black" onClick={sendDataForUpgrade}>
-          Submit
-        </button>
-      </div>
-      <div>{loading && <img src={gif} alt="loading" width={50} />}</div>
-    </div>
+    </>
   );
 };
 
