@@ -115,6 +115,7 @@ const DashboardAdmin = () => {
               <th>First Name</th>
               <th>Last Name</th>
               <th>E-mail</th>
+              <th>Template</th>
               <th>Role</th>
               <th>More Info</th>
             </tr>
@@ -127,6 +128,11 @@ const DashboardAdmin = () => {
                   <td>{user.FirstName}</td>
                   <td>{user.LastName}</td>
                   <td>{user.email}</td>
+                  <td>
+                          {user.template
+                            ? `Template number ${user.template}`
+                            : "Not yet selected"}
+                        </td>
                   <td>{user.role}</td>
 
                   <td>
