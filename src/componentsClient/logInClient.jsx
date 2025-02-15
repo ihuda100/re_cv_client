@@ -21,6 +21,7 @@ const loginClient = () => {
   };
 
   const doApi = async (_dataBody) => {
+    setError(null);
     console.log(_dataBody);
     let url = API_URL + "/users/login";
     try {
@@ -33,9 +34,11 @@ const loginClient = () => {
         nav("/homeClient");
       }
     } catch (err) {
-      console.log(err.response.data.err);
-      setError(err.response.data.err);
-      // alert(err.response.data.err);
+      if(err.message == 'Network Error'){
+        setError(err.message)
+      }else {
+        setError(err.response.data.err);
+      }
     }
   };
 

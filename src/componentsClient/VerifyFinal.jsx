@@ -11,9 +11,17 @@ const VerifyFinal = () => {
 
   const sendToPDF = async () => {
     const url = API_URL + "/resumes/update";
-    const res = await doApiMethod(url, "POST", info);
-    console.log(res.data);
-    nav("/template", { state: { data: info._id } });
+    try {
+      const res = await doApiMethod(url, "POST", info);
+      console.log(res.data);
+      nav("/template", { state: { data: info._id } });
+    } catch (err) {
+      if (err.message == "Network Error") {
+        alert(err.message);
+      } else {
+        alert(err.response.data.message);
+      }
+    }
   };
   const handleChange = (e, i) => {
     const { name, value } = e.target;

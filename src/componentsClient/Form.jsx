@@ -28,7 +28,11 @@ const Form = () => {
       nav("/verify", { state: { data: res.data } });
     } catch (err) {
       setLoading(false);
-      console.log(err);
+      if(err.message == 'Network Error'){
+        alert(err.message)
+      }else{
+        alert(err.response.data[0].message)
+      }
     }
   };
 

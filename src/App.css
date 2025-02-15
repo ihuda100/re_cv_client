@@ -29,4 +29,18 @@
   margin-right: 15px;
 }
 
+.table-row {
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.table-row:hover {
+  background-color: rgba(0, 123, 255, 0.209) !important; /* כחול בהיר יותר */
+}
+.table tbody tr.table-row:hover {
+  background-color: rgba(0, 123, 255, 0.15) !important; /* כחול עדין */
+}
+
+
+
 
