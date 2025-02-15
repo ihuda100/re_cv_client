@@ -37,44 +37,104 @@ const Form = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <>
       <div>
-        <h1 className="py-4">Complete Your Details to Build Your Perfect Resume ✍️</h1>
+        <h1 className="py-4 " style={{ textAlign: "center" }}>
+          Complete Your Details to Build Your Perfect Resume ✍️
+        </h1>
       </div>
+      <div className=" container d-flex  align-items-center justify-content-center gap-5">
+        <form
+          action=""
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+            gap: "10px",
+            //  width: "10%",
+          }}
+          className="w-50"
+        >
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Full Name"
+            id="fullName"
+            required
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Phone"
+            id="phone"
+            required
+          />
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Email"
+            id="email"
+            required
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Linkedin"
+            id="linkdin"
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="GitHub"
+            id="gitHub"
+          />
+          <textarea
+            className="form-control"
+            type="text"
+            placeholder="Education"
+            id="education"
+            required
+          />
+          <textarea
+            className="form-control"
+            type="text"
+            placeholder="Work experience"
+            id="workExpirience"
+            required
+          />
+          <textarea
+            className="form-control"
+            type="text"
+            placeholder="Tell me about you"
+            id="body"
+          />
+          <div style={{ padding: "20px" }}>
+            <button className="btn border-black" onClick={sendDataForUpgrade}>
+              Submit
+            </button>
+          </div>
+          <div>{loading && <img src={gif} alt="loading" width={50} />}</div>
+        </form>
 
-      <form
-        action=""
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-          gap: "10px",
-          width: "50%",
-        }}
-      >
-        <input className="form-control" type="text" placeholder="Full Name" id="fullName" required />
-        <input className="form-control" type="text" placeholder="Phone" id="phone" required />
-        <input className="form-control" type="email" placeholder="Email"  id="email" required />
-        <input className="form-control" type="text" placeholder="Linkdin" id="linkdin" />
-        <input className="form-control" type="text" placeholder="GitHub" id="gitHub" />
-        <textarea className="form-control" type="text" placeholder="Education" id="education" required />
-        <textarea className="form-control" type="text" placeholder="Work expirience" id="workExpirience" required />
-        <textarea className="form-control" type="text" placeholder="Tell me about you" id="body" />
-      </form>
-      <div style={{ padding: "20px" }}>
-        <button className="btn border-black" onClick={sendDataForUpgrade}>
-          Submit
-        </button>
+        <div className="w-50 d-block fs-5 p-5 my-5 ">
+          <h1>Help:</h1>
+          <p>
+            Enter your full name phone number and email into the corresponding
+            fields
+          </p>
+          <p>Enter GitHub or linkedin if available</p>
+          <p>
+            Enter Education recommended into the following format: School Name
+            199x - 200x Degree in ****
+          </p>
+          <p>
+            Enter Work Experience recommended into the following format: Year
+            199x-200x job position and description.
+          </p>
+          <p>Finally you can freely write about yourself.</p>
+        </div>
       </div>
-      <div>{loading && <img src={gif} alt="loading" width={50} />}</div>
-    </div>
+    </>
   );
 };
 
