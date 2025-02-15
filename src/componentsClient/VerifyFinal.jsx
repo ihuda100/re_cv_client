@@ -32,95 +32,113 @@ const VerifyFinal = () => {
   };
 
   return (
-    <div style={{ height: "100vh" }}>
-
+    <>
+      <div className="text-center">
+        <h1 className="my-4">Review & Confirm Your Enhanced Resume ✅</h1>
+      </div>
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={{ height: "100vh" }}
+        className="container d-flex justify-content-center align-items-center gap-5"
       >
-        <div>
-          <h1 className="my-4">Review & Confirm Your Enhanced Resume ✅</h1>
-        </div>
-
-        <form
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
-            textAlign: "center",
-            gap: "10px",
-            width: "50%",
+            justifyContent: "center",
+            alignItems: "center",
           }}
+          className="w-50"
         >
-          <input
-            className="form-control"
-            placeholder="Full Name"
-            type="text"
-            name="fullName"
-            value={info?.fullName}
-            onChange={handleChange}
-          />
-          <input
-            className="form-control"
-            placeholder="Phone"
-            type="number"
-            name="phone"
-            value={info?.phone}
-            onChange={handleChange}
-          />
-          <input
-            className="form-control"
-            placeholder="Email"
-            type="email"
-            name="email"
-            value={info?.email}
-            onChange={handleChange}
-          />
-          <input
-            className="form-control"
-            placeholder="Linkdin"
-            type="text"
-            name="linkdin"
-            value={info?.linkdin}
-            onChange={handleChange}
-          />
-          <input
-            className="form-control"
-            placeholder="GitHub"
-            type="text"
-            name="gitHub"
-            value={info?.gitHub}
-            onChange={handleChange}
-          />
-          {info?.body.map((item, i) => {
-            return (
-              <div key={i} style={{ gap: "10px" }}>
-                <label htmlFor="">{item?.key}</label>
-                {/* <br /> */}
-                <textarea
-                  className="w-100 form-control"
-                  rows={3}
-                  type="text"
-                  name="body"
-                  index={i}
-                  value={item?.value}
-                  onChange={(e) => handleChange(e, i)}
-                />
-              </div>
-            );
-          })}
-        </form>
+          <form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              textAlign: "center",
+              gap: "10px",
+              width: "100%",
+            }}
+          >
+            <input
+              className="form-control"
+              placeholder="Full Name"
+              type="text"
+              name="fullName"
+              value={info?.fullName}
+              onChange={handleChange}
+            />
+            <input
+              className="form-control"
+              placeholder="Phone"
+              type="number"
+              name="phone"
+              value={info?.phone}
+              onChange={handleChange}
+            />
+            <input
+              className="form-control"
+              placeholder="Email"
+              type="email"
+              name="email"
+              value={info?.email}
+              onChange={handleChange}
+            />
+            <input
+              className="form-control"
+              placeholder="Linkdin"
+              type="text"
+              name="linkdin"
+              value={info?.linkdin}
+              onChange={handleChange}
+            />
+            <input
+              className="form-control"
+              placeholder="GitHub"
+              type="text"
+              name="gitHub"
+              value={info?.gitHub}
+              onChange={handleChange}
+            />
+            {info?.body.map((item, i) => {
+              return (
+                <div key={i} style={{ gap: "10px" }}>
+                  <label htmlFor="">{item?.key}</label>
+                  {/* <br /> */}
+                  <textarea
+                    className="w-100 form-control"
+                    rows={3}
+                    type="text"
+                    name="body"
+                    index={i}
+                    value={item?.value}
+                    onChange={(e) => handleChange(e, i)}
+                  />
+                </div>
+              );
+            })}
+          </form>
 
-        <div className="pt-2">
-          <button onClick={sendToPDF} className="btn border-black">
-            Verify your data
-          </button>
+          <div className="pt-2">
+            <button onClick={sendToPDF} className="btn border-black">
+              Verify your data
+            </button>
+          </div>
+        </div>
+        <div className="w-50 fs-5">
+          <h1>Help:</h1>
+          <p>
+            In this page you can review all the details that were generated and
+            redacted by AI.
+          </p>
+          <p>
+            In this fields you can view and edit the details to your liking.
+          </p>
+          <p>
+            When you are satisfied with the results just click the "Verify Your
+            Data" Button.
+          </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
