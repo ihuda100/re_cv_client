@@ -46,8 +46,8 @@ const Template = () => {
   const imageGen = () =>
     getDisplayedImages().map((el, i) => (
       <CV
-        height={"500px"}
-        width={"400px"}
+        height={"450px"}
+        width={"360px"}
         src={el}
         onClick={() => openImg(i)}
         key={i}
