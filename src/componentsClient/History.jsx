@@ -49,7 +49,7 @@ function History() {
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Titel</th>
+                    {/* <th>Titel</th> */}
                     <th>Date</th>
                     <th>Previwe</th>
                   </tr>
@@ -59,7 +59,7 @@ function History() {
                     return (
                       <tr key={index} className="align-middle table-row" onClick={() => toPreviwe(resume._id)}>
                         <td className="fw-semibold">{index + 1}</td>
-                        <td>{resume?.type}</td>
+                        {/* <td>{resume?.type}</td> */}
                         <td className="text-muted">
                           {resume.dateCreated
                             ? resume.dateCreated.substring(10, length - 1)
