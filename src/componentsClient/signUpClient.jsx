@@ -70,8 +70,8 @@ function SignUpClient() {
           {/* <img src="" alt="" /> */}
           <img
             className="mb-4"
-            style={{ height: "20%", width: "20%", borderRadius: "50px" }}
-            src="src/assets/react.svg"
+            style={{ height: "20%", width: "50%", }}
+            src="src/assets/logo.png"
             alt="logo"
           />
           <h3 className="m-2">Create Account</h3>

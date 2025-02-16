@@ -29,8 +29,9 @@ const Welcome = () => {
         className="container d-flex justify-content-between align-items-center"
       >
         <img
-          style={{ height: "50px", width: "50px", borderRadius: "50px" }}
-          src="src/assets/react.svg"
+          height={60}
+          // style={{ height: "20%", width: "50%" }}
+          src="src/assets/logo.png"
           alt="logo"
         />
         <button onClick={toSignIn} className="btn border-black">
@@ -57,26 +58,26 @@ const Welcome = () => {
               Sign Up
             </button>
           </div> */}
-            <h1 className="fw-bold mb-4 text-primary">
-              Create Your Professional Resume in 3 Easy Steps!
-            </h1>
+          <h1 className="fw-bold mb-4" style={{ color: '#0A5EB0'}}>
+            Create Your Professional Resume in 3 Easy Steps!
+          </h1>
 
-            <ul className="custom-list">
-              <li>Upload Your Existing Resume or Start Fresh</li>
-              <li>Customize & Enhance with AI-Powered Suggestions</li>
-              <li>Choose a Template & Download Your Perfect Resume</li>
-            </ul>
+          <ul className="custom-list">
+            <li>Upload Your Existing Resume or Start Fresh</li>
+            <li>Customize & Enhance with AI-Powered Suggestions</li>
+            <li>Choose a Template & Download Your Perfect Resume</li>
+          </ul>
 
-            <p className="mt-3 text-muted">
-              Start now and stand out in your job search!
-            </p>
+          <p className="mt-3 text-muted">
+            Start now and stand out in your job search!
+          </p>
 
-            <button
-              onClick={toSignUp}
-              className="btn btn-primary mt-4 px-4 py-2 w-50"
-            >
-              Sign Up
-            </button>
+          <button
+            onClick={toSignUp}
+            className="btn btn-primary mt-4 px-4 py-2 w-50"
+          >
+            Sign Up
+          </button>
           {/* <div className="d-flex justify-content-center">
             <div
               className="p-4 shadow-sm text-center rounded rounded-4"

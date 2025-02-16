@@ -71,8 +71,8 @@ function VarificationforgotPass() {
         <div className="row justify-content-center">
           <img
             className="mb-4"
-            style={{ height: "20%", width: "20%", borderRadius: "50px" }}
-            src="src/assets/react.svg"
+            style={{ height: "20%", width: "50%" }}
+            src="src/assets/logo.png"
             alt="logo"
           />
           <h1 className="">password verification</h1>

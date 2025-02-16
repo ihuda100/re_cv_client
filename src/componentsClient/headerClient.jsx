@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { addIfShowNav } from "../featuers/myDetailsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import * as bootstrap from "bootstrap";
+import logo from '../assets/react.jpeg'
 
 function HeaderClient() {
   let nav = useNavigate();
@@ -44,7 +45,7 @@ function HeaderClient() {
       >
         {/* <div className="d-flex justify-content-around "> */}
 
-        <img src="src/assets/react.svg" alt="logo" onClick={onHomeClick} />
+        <img src="src/assets/logo.png" alt="logo" height={55} onClick={onHomeClick} />
 
         <button className="btn border-black" onClick={onHistory}>
           History
