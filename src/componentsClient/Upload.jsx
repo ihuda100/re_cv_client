@@ -48,7 +48,7 @@ const Upload = () => {
   return (
     <div style={{ height: "100vh" }}>
       <div className="text-center">
-        <h1 className="my-4">Upload Your Resume to Get Started 📤</h1>
+        <h1 className="my-4">Upload Your Resume to Get Started</h1>
         <input
           onChange={handleFileChange}
           class="form-control form-control-lg w-25 m-auto"

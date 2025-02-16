@@ -39,7 +39,7 @@ function HeaderClient() {
       }}
     >
       <div
-        className="d-flex justify-content-between align-items-center"
+        className="container d-flex justify-content-between align-items-center"
         style={{ height: "40px" }}
       >
         {/* <div className="d-flex justify-content-around "> */}
@@ -53,12 +53,12 @@ function HeaderClient() {
         {/* Drop Down */}
         <div className="dropdown">
           <button
-            className="btn btn-secondary dropdown-toggle"
+            className="btn btn-secondary"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown button
+            <i class="bi bi-three-dots-vertical"></i>{" "}
           </button>
           <ul className="dropdown-menu">
             <li>
@@ -76,7 +76,7 @@ function HeaderClient() {
                 onClick={onHelpClick}
                 style={{ cursor: "pointer" }}
               >
-                Help
+                Q&A
               </a>
             </li>
             <li>

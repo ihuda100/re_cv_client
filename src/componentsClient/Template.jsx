@@ -67,14 +67,14 @@ const Template = () => {
   return (
     <>
       <div className="center">
-        <h1 className="my-4">Choose your desired resume template</h1>
+        <h1 className="my-5">Choose your desired resume template</h1>
       </div>
       <div className="center">
-        <div className="buttons-container">
+        <div className="buttons-container w-100">
           <button onClick={toTheLeft} className="nav-button p-4 opacity-50">
             <FaArrowLeft />
           </button>
-          <div className="images-container">{imageGen()}</div>
+          <div className="images-container w-100">{imageGen()}</div>
           <button onClick={toTheRight} className="nav-button p-4 opacity-50">
             <FaArrowRight />
           </button>

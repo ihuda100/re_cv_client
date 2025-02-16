@@ -42,7 +42,7 @@ const VerifyFinal = () => {
   return (
     <>
       <div className="text-center">
-        <h1 className="my-4">Review & Confirm Your Enhanced Resume ✅</h1>
+        <h1 className="my-4">Review & Confirm Your Enhanced Resume</h1>
       </div>
       <div
         style={{ height: "100vh" }}

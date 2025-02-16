@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { API_URL, doApiMethod } from '../services/apiService';
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { API_URL, doApiMethod } from "../services/apiService";
 
 const Varification = () => {
   let nav = useNavigate();
-  const myEmail = useSelector(state => state.myDetailsSlice.email);
-  const [code, setCode] = useState(['', '', '', '','']);
+  const myEmail = useSelector((state) => state.myDetailsSlice.email);
+  const [code, setCode] = useState(["", "", "", "", ""]);
 
   const handleChange = (event, index) => {
     const value = event.target.value;
@@ -24,23 +24,22 @@ const Varification = () => {
 
   const handleKeyDown = (event, index) => {
     // מעבר לשדה הקודם בלחיצה על Backspace כשהשדה ריק
-    if (event.key === 'Backspace' && !code[index] && index > 0) {
+    if (event.key === "Backspace" && !code[index] && index > 0) {
       document.getElementById(`input-${index - 1}`).focus();
     }
   };
 
   // בדיקת תקינות האם כל השדות מולאו
-  const isCodeComplete = code.every((digit) => digit !== '');
+  const isCodeComplete = code.every((digit) => digit !== "");
 
   const handleSubmit = () => {
-    const codeString = code.join(''); // חיבור הערכים למחרוזת
+    const codeString = code.join(""); // חיבור הערכים למחרוזת
     let _dataObg = {
       email: myEmail,
       verifictionCode: codeString,
-    }
-    doApi(_dataObg)
+    };
+    doApi(_dataObg);
   };
-
 
   const doApi = async (_dataBody) => {
     console.log(_dataBody);
@@ -48,31 +47,39 @@ const Varification = () => {
     try {
       let resp = await doApiMethod(url, "PATCH", _dataBody);
       console.log(resp);
-      if (resp.data.status = 200) {
+      if ((resp.data.status = 200)) {
         console.log("You are now a valid user");
         nav("/login");
       }
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err.response.data);
       nav("/");
     }
-  }
+  };
 
   // const sendAgain = () => {
   //   nav("/SignUp");
   // };
 
   return (
-
-    <div style={{ height: "100vh" }}>
-
-      <div className=" container mt-5 shadow-lg p-4 d-flex flex-column text-center" style={{ width: '80%', maxWidth: '500px', backgroundColor: 'white' }}>
+    <div className="align-content-center" style={{ height: "100vh" }}>
+      <div
+        className="rounded rounded-4 container mt-5 shadow-lg p-4 d-flex flex-column text-center"
+        style={{ width: "80%", maxWidth: "500px", backgroundColor: "white" }}
+      >
         <div className="row justify-content-center">
-          {/* <img src="" alt="" /> */}
-          <h1 className=''>password verification</h1>
+          <img
+            className="mb-4"
+            style={{ height: "20%", width: "20%", borderRadius: "50px" }}
+            src="src/assets/react.svg"
+            alt="logo"
+          />
+          <h1 className="">password verification</h1>
 
-          <p className="text-center mb-4 mt-2">Enter the 4-digit security code we send to : <strong>{myEmail}</strong></p>
+          <p className="text-center mb-4 mt-2">
+            Enter the 4-digit security code we send to :{" "}
+            <strong>{myEmail}</strong>
+          </p>
 
           <div className="d-flex justify-content-center gap-2">
             {code.map((value, index) => (
@@ -81,7 +88,7 @@ const Varification = () => {
                 id={`input-${index}`}
                 type="text"
                 className="form-control text-center"
-                style={{ width: '50px', fontSize: '24px' }}
+                style={{ width: "50px", fontSize: "24px" }}
                 maxLength="1"
                 value={value}
                 onChange={(event) => handleChange(event, index)}
@@ -93,14 +100,17 @@ const Varification = () => {
           <div className="text-center mt-3">
             <button
               className="btn border-black w-100"
-              onClick={handleSubmit} disabled={!isCodeComplete}
-            >Send</button>
+              onClick={handleSubmit}
+              disabled={!isCodeComplete}
+            >
+              Send
+            </button>
           </div>
           {/* <p onClick={sendAgain} className='mt-2 text-danger '>Didn't get a code?</p> */}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Varification
+export default Varification;
