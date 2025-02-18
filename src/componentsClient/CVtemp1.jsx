@@ -41,11 +41,11 @@ const Form1 = () => {
   };
 
   const doApi = async () => {
-    let template = { template: index };
-    console.log(template);
-    let url = API_URL + "/users/template";
+    let info = { template: index + 1, id: data[0]._id };
+    console.log(info);
+    let url = API_URL + "/resumes/template";
     try {
-      let resp = await doApiMethod(url, "PATCH", template);
+      let resp = await doApiMethod(url, "PATCH", info);
       console.log(resp.data);
     } catch (err) {
       console.log(err);

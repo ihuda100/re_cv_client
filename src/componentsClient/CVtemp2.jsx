@@ -43,11 +43,11 @@ const Form2 = () => {
   };
 
   const doApi = async () => {
-    let template = { template: index };
-    console.log(template);
-    let url = API_URL + "/users/template";
+    let info = { template: index + 1, id: data[0]._id };
+    console.log(info);
+    let url = API_URL + "/resumes/template";
     try {
-      let resp = await doApiMethod(url, "PATCH", template);
+      let resp = await doApiMethod(url, "PATCH", info);
       console.log(resp.data);
     } catch (err) {
       console.log(err);
@@ -58,7 +58,11 @@ const Form2 = () => {
     <>
       <div className="center">
         <div className="border border-3">
-          <div ref={printRef} style={{ height: "1131.44px", width: "800px" }}>
+          <div
+            ref={printRef}
+            className="p-5"
+            style={{ height: "1131.44px", width: "800px" }}
+          >
             <div
               style={{
                 borderBottom: "5px solid green",
