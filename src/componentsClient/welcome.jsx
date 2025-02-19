@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addIfShowNav } from "../featuers/myDetailsSlice";
+import stock from "../assets/stock.jpg";
+import stock2 from "../assets/stock2.jpg";
 
 const Welcome = () => {
   let nav = useNavigate();
@@ -27,18 +29,14 @@ const Welcome = () => {
         style={{ height: "70px" }}
         className="container d-flex justify-content-between align-items-center"
       >
-        <img
-          height={60}
-          src="src/assets/logo.png"
-          alt="logo"
-        />
+        <img height={60} src="src/assets/logo.png" alt="logo" />
         <button onClick={toSignIn} className="btn border-black">
           Sign In
         </button>
       </div>
       <div className="container d-flex" style={{ minHeight: "90vh" }}>
         <div className="w-50 align-content-center justify-content-center p-5">
-          <h1 className="fw-bold mb-4" style={{ color: '#0A5EB0'}}>
+          <h1 className="fw-bold mb-4" style={{ color: "#0A5EB0" }}>
             Create Your Professional Resume in 3 Easy Steps!
           </h1>
 
@@ -63,7 +61,23 @@ const Welcome = () => {
           className="w-50 px-5 align-content-center justify-content-center text-center"
           // style={{background: `url(${bgImage}) no-repeat center center / cover`}}
         >
-          <div className="p-4 shadow rounded rounded-4 h-75 align-content-center ">
+          <div
+            style={{ position: "relative" }}
+            className="p-1 shadow rounded rounded-4 h-75 align-content-center "
+          >
+            <img src={stock2} alt="" height={"100%"} width={"100%"} />
+
+            <p
+              className="fs-1"
+              style={{
+                position: "absolute",
+                bottom: "10%",
+                color: "#000000",
+              }}
+            >
+              "Your Dream Job Starts with a Better CV!"
+            </p>
+
             {/* div for img */}
           </div>
         </div>
