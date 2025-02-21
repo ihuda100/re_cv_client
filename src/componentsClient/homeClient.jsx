@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { API_URL, doApiGet, doApiMethod } from "../services/apiService";
 import { addIfShowNav, addIsAdmin, addName } from "../featuers/myDetailsSlice";
 import cvimg from "../assets/cvimg.jpg";
+import { Italic, Sparkles } from "lucide-react";
+import { CloudUpload } from "lucide-react";
 const HomeClient = () => {
   const myName = useSelector((state) => state.myDetailsSlice.name);
   const IsAdmin = useSelector((state) => state.myDetailsSlice.isAdmin);
@@ -58,22 +60,18 @@ const HomeClient = () => {
       <h1 className="mb-4">
         Welcome {myName} {myInfo.LastName}
       </h1>
-      <div className="shadow-lg w-50  p-4 bg-white rounded-4 mb-5">
-        <img src={cvimg} alt="" width={350} height={350} />
+      <div className=" w-50  p-4 ">
+        <img src={cvimg} alt="" width={500} height={350} />
+        <h2 className="m-2">
+          Build a CV that <span className="fst-italic"> gets you noticed</span>
+        </h2>
+        <p className="text-muted">
+          Easily craft a professional CV or import your existing one <br /> to
+          make a lasting impression
+        </p>
       </div>
+
       <div className="w-50 d-flex justify-content-around ">
-        <button
-          onMouseEnter={onHover}
-          onMouseLeave={onHover}
-          onClick={toUpload}
-          className="btn border-black"
-          style={{
-            background: hover ? "#0A5EB0" : "",
-            color: hover ? "white" : "",
-          }}
-        >
-          I have CV to upgrade
-        </button>
         <button
           onMouseEnter={onHover2}
           onMouseLeave={onHover2}
@@ -84,7 +82,21 @@ const HomeClient = () => {
             color: hover2 ? "white" : "",
           }}
         >
-          I want create CV
+          <Sparkles className="me-3" />
+          Create a new CV
+        </button>
+        <button
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+          onClick={toUpload}
+          className="btn border-black"
+          style={{
+            background: hover ? "#0A5EB0" : "",
+            color: hover ? "white" : "",
+          }}
+        >
+          <CloudUpload className="me-3" />
+          Upload my CV
         </button>
       </div>
     </div>
