@@ -45,7 +45,6 @@ const VerifyFinal = () => {
         <h1 className="my-4">Review & Confirm Your Enhanced Resume</h1>
       </div>
       <div
-        style={{ height: "100vh" }}
         className="container d-flex justify-content-center align-items-center gap-5"
       >
         <div

@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { API_URL, doApiGet, doApiMethod } from "../services/apiService";
 import { addIfShowNav, addIsAdmin, addName } from "../featuers/myDetailsSlice";
 import cvimg from "../assets/cvimg.jpg";
-// import { Italic, Sparkles } from "lucide-react";
-// import { CloudUpload } from "lucide-react";
+import { Italic, Sparkles } from "lucide-react";
+import { CloudUpload } from "lucide-react";
 const HomeClient = () => {
   const myName = useSelector((state) => state.myDetailsSlice.name);
   const IsAdmin = useSelector((state) => state.myDetailsSlice.isAdmin);
@@ -54,8 +54,8 @@ const HomeClient = () => {
 
   return (
     <div
-      className="container text-center d-flex justify-content-center align-items-center flex-column mt-2"
-      style={{ height: "80%", padding: "20px" }}
+      className="text-center d-flex justify-content-center align-items-center flex-column"
+      style={{ height: "93vh", background: '#F7F7F7' }}
     >
       <h1 className="mb-4">
         Welcome {myName} {myInfo.LastName}

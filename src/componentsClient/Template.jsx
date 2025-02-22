@@ -12,7 +12,7 @@ import { doApiMethod, API_URL } from "../services/apiService";
 const Template = () => {
   const nav = useNavigate();
   const location = useLocation();
-  const [verify, setVerify] = useState(true);
+  const [error, setError] = useState(null);
   const [imgs, setImgs] = useState([cv0, cv1, cv2, cv3]);
   const [startIndex, setStartIndex] = useState(0); // מצביע על התמונה הראשונה מתוך ה-3 שיופיעו
 
@@ -20,16 +20,20 @@ const Template = () => {
   data = { id: data };
 
   const openImg = async (i) => {
+    setError(null);
     try {
       const url = API_URL + "/resumes/getinfo";
       const res = await doApiMethod(url, "POST", data);
       //const actualIndex = (startIndex + i) % imgs.length;
       nav(`/cvtemp${(startIndex + i) % imgs.length}`, {
-        state: { data: [res.data] , index: (startIndex + i) % imgs.length },
+        state: { data: [res.data], index: (startIndex + i) % imgs.length },
       });
     } catch (error) {
-      if (error.response.data.message === "Please verify you resumes") {
-        setVerify(false);
+      console.log(error)
+      if (error.message == "Network Error") {
+        setError(error.message);
+      } else {
+        setError(error.response.data.message);
       }
     }
   };
@@ -80,11 +84,7 @@ const Template = () => {
           </button>
         </div>
       </div>
-      {!verify && (
-        <h1 className="text-danger text-center p-3">
-          Please verify your resumes
-        </h1>
-      )}
+      <h1 className="text-danger text-center p-3">{error}</h1>
     </>
   );
 };
