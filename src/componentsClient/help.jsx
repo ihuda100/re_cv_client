@@ -73,7 +73,7 @@ const Help = () => {
               type="button"
               onClick={() => toggleAccordion(2)}
             >
-              How Re:cv coollects my data ?
+              How Re:cv collects my data ?
             </button>
           </h2>
           <div
@@ -83,7 +83,7 @@ const Help = () => {
             aria-labelledby="headingThree"
           >
             <div className="accordion-body">
-              Re:cv only collects what you provide for genrating or improving
+              Re:cv only collects what you provide for generating or improving
               your Resume, we will never collect or store private information.
             </div>
           </div>
@@ -109,7 +109,7 @@ const Help = () => {
             aria-labelledby="headingFour"
           >
             <div className="accordion-body">
-              Yes , it's requirded one time regestration, it's quick, easy and
+              Yes , it's required one time registration, it's quick, easy and
               secure.
             </div>
           </div>
