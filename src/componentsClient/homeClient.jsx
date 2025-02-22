@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { API_URL, doApiGet, doApiMethod } from "../services/apiService";
 import { addIfShowNav, addIsAdmin, addName } from "../featuers/myDetailsSlice";
 import cvimg from "../assets/cvimg.jpg";
-import { Italic, Sparkles } from "lucide-react";
-import { CloudUpload } from "lucide-react";
+// import { Italic, Sparkles } from "lucide-react";
+// import { CloudUpload } from "lucide-react";
 const HomeClient = () => {
   const myName = useSelector((state) => state.myDetailsSlice.name);
   const IsAdmin = useSelector((state) => state.myDetailsSlice.isAdmin);

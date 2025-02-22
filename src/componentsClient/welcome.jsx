@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addIfShowNav } from "../featuers/myDetailsSlice";
-import stock from "../assets/stock.jpg";
+import img from "../assets/welcomeImg.jpeg";
 import stock2 from "../assets/stock2.jpg";
 
 const Welcome = () => {
@@ -65,9 +65,9 @@ const Welcome = () => {
             style={{ position: "relative" }}
             className="shadow rounded rounded-4 h-75 align-content-center "
           >
-            <img className="rounded rounded-4" src={stock2} alt="" height={"100%"} width={"100%"} />
+            <img src={img} className="rounded rounded-4" alt="" height={"100%"} width={"100%"} />
 
-            <p
+            {/* <p
               className="fs-1"
               style={{
                 position: "absolute",
@@ -76,7 +76,7 @@ const Welcome = () => {
               }}
             >
               "Your Dream Job Starts with a Better CV!"
-            </p>
+            </p> */}
 
             {/* div for img */}
           </div>
