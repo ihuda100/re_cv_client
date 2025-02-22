@@ -63,9 +63,9 @@ const Welcome = () => {
         >
           <div
             style={{ position: "relative" }}
-            className="p-1 shadow rounded rounded-4 h-75 align-content-center "
+            className="shadow rounded rounded-4 h-75 align-content-center "
           >
-            <img src={stock2} alt="" height={"100%"} width={"100%"} />
+            <img className="rounded rounded-4" src={stock2} alt="" height={"100%"} width={"100%"} />
 
             <p
               className="fs-1"

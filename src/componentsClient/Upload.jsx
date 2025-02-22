@@ -15,7 +15,6 @@ const Upload = () => {
   };
   const sendFile = async () => {
     setLoading(true);
-    // console.log(file);
     if (!file) {
       alert("select file please!");
       setLoading(false);
