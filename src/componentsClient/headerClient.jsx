@@ -54,7 +54,7 @@ function HeaderClient() {
         {/* Drop Down */}
         <div className="dropdown">
           <button
-            className="btn btn-secondary"
+            className="btn border-black"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"

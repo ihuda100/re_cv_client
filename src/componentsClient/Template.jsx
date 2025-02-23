@@ -18,7 +18,6 @@ const Template = () => {
 
   let { data } = location.state || {};
   data = { id: data };
-
   const openImg = async (i) => {
     setError(null);
     try {

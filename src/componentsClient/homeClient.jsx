@@ -61,7 +61,7 @@ const HomeClient = () => {
         Welcome {myName} {myInfo.LastName}
       </h1>
       <div className=" w-50  p-4 ">
-        <img src={cvimg} alt="" width={500} height={350} />
+        <img className="p-5" src={cvimg} alt="" />
         <h2 className="m-2">
           Build a CV that <span className="fst-italic"> gets you noticed</span>
         </h2>

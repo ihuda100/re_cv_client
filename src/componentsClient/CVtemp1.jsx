@@ -39,7 +39,7 @@ const Form1 = () => {
     pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("examplepdf.pdf");
   };
-
+  
   const doApi = async () => {
     let info = { template: index + 1, id: data[0]._id };
     console.log(info);
