@@ -13,7 +13,7 @@ export const doApiGet = async (_url) => {
     return data;
   }
   catch(err){
-    console.error(err.response.data);
+    // console.error(err.response.data);
     throw err
   }
 }

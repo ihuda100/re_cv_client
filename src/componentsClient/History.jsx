@@ -16,14 +16,18 @@ function History() {
   const doApiAllResumes = async () => {
     let url = API_URL + "/resumes/history";
     try {
-      let data = await doApiGet(url);
+      let res = await doApiGet(url);
       setLoading(false);
-      console.log(data.data);
-      setAr(data.data);
+      console.log(res.data);
+      setAr(res.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setLoading(false);
-      setError(error.response.data.error);
+      if (error.message == "Network Error") {
+        setError(error.message);
+      } else{
+        setError(error.response.data.error);
+      }
     }
   };
 
@@ -38,7 +42,7 @@ function History() {
         <div className="text-center p-3">
           <img src={gif} alt="loading" width={50} />
         </div>
-      ) : error ? (<h1 className="text-center text-danger">{error}</h1>) : (
+      ) : error ? (<h1 className="text-center text-danger p-3">{error}</h1>) : (
         <>
           <div className="container">
             <div style={{ textAlign: "center", justifyContent: "center" }}>
@@ -70,7 +74,7 @@ function History() {
                             className="btn btn-outline-dark"
                             onClick={() => toPreviwe(resume._id)}
                           >
-                            <i class="bi bi-arrow-right-short"></i>
+                            <i className="bi bi-arrow-right-short"></i>
                           </button>
                         </td>
                       </tr>

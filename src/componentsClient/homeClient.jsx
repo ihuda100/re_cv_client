@@ -54,10 +54,10 @@ const HomeClient = () => {
 
   return (
     <div
-      className="text-center d-flex justify-content-center align-items-center flex-column"
-      style={{ height: "93vh", background: '#F7F7F7' }}
+      className="text-center d-flex justify-content-center align-items-center flex-column pb-5"
+      style={{ background: '#F7F7F7' }}
     >
-      <h1 className="mb-4">
+      <h1 className="my-4">
         Welcome {myName} {myInfo.LastName}
       </h1>
       <div className=" w-50  p-4 ">
@@ -71,7 +71,7 @@ const HomeClient = () => {
         </p>
       </div>
 
-      <div className="w-50 d-flex justify-content-around ">
+      <div className="w-50 d-flex justify-content-around pb-4">
         <button
           onMouseEnter={onHover2}
           onMouseLeave={onHover2}
