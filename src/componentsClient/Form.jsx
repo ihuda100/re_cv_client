@@ -7,7 +7,8 @@ const Form = () => {
   const nav = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const sendDataForUpgrade = async () => {
+  const sendDataForUpgrade = async (e) => {
+    e.preventDefault();
     setLoading(true);
     let data = {
       fullName: document.querySelector("#fullName").value,
@@ -40,7 +41,7 @@ const Form = () => {
     <>
       <div>
         <h1 className="py-4 " style={{ textAlign: "center" }}>
-          Complete Your Details to Build Your Perfect Resume ✍️
+          Complete Your Details to Build Your Perfect Resume
         </h1>
       </div>
       <div className=" container d-flex  align-items-center justify-content-center gap-5">
